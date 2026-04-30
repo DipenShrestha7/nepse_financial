@@ -1,0 +1,1086 @@
+{
+    "NABIL": {
+        "company_name": "Nabil Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "NIMB": {
+        "company_name": "Nepal Investment Mega Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "SCB": {
+        "company_name": "Standard Chartered Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "HBL": {
+        "company_name": "Himalayan Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "SBI": {
+        "company_name": "Nepal SBI Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "EBL": {
+        "company_name": "Everest Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "NICA": {
+        "company_name": "NIC Asia Bank Ltd.",
+        "sector": "Commercial Banks"
+    },
+    "MBL": {
+        "company_name": "Machhapuchhre Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "LSL": {
+        "company_name": "Laxmi Sunrise Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "KBL": {
+        "company_name": "Kumari Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "SBL": {
+        "company_name": "Siddhartha Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "SHL": {
+        "company_name": "Soaltee Hotel Limited",
+        "sector": "Hotels And Tourism"
+    },
+    "TRH": {
+        "company_name": "Taragaon Regency Hotel Limited",
+        "sector": "Hotels And Tourism"
+    },
+    "OHL": {
+        "company_name": "Oriental Hotels Limited",
+        "sector": "Hotels And Tourism"
+    },
+    "NHPC": {
+        "company_name": "National Hydro Power Company Limited",
+        "sector": "Hydro Power"
+    },
+    "BPCL": {
+        "company_name": "Butwal Power Company Limited",
+        "sector": "Hydro Power"
+    },
+    "CHCL": {
+        "company_name": "Chilime Hydropower Company Limited",
+        "sector": "Hydro Power"
+    },
+    "STC": {
+        "company_name": "Salt Trading Corporation",
+        "sector": "Tradings"
+    },
+    "BBC": {
+        "company_name": "Bishal Bazar Company Limited",
+        "sector": "Tradings"
+    },
+    "NUBL": {
+        "company_name": "Nirdhan Utthan Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "CBBL": {
+        "company_name": "Chhimek Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "DDBL": {
+        "company_name": "Deprosc Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "SANIMA": {
+        "company_name": "Sanima Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "NABBC": {
+        "company_name": "Narayani Development Bank Limited",
+        "sector": "Development Banks"
+    },
+    "NICL": {
+        "company_name": "Nepal Insurance Co. Ltd.",
+        "sector": "Non Life Insurance"
+    },
+    "RBCL": {
+        "company_name": "Rastriya Beema Company Limited",
+        "sector": "Non Life Insurance"
+    },
+    "NLICL": {
+        "company_name": "National Life Insurance Co. Ltd.",
+        "sector": "Life Insurance"
+    },
+    "HEI": {
+        "company_name": "Himalayan Everest Insurance Limited",
+        "sector": "Non Life Insurance"
+    },
+    "UAIL": {
+        "company_name": "United Ajod Insurance Limited",
+        "sector": "Non Life Insurance"
+    },
+    "SPIL": {
+        "company_name": "Siddhartha Premier Insurance Limited",
+        "sector": "Non Life Insurance"
+    },
+    "NIL": {
+        "company_name": "Neco Insurance Limited",
+        "sector": "Non Life Insurance"
+    },
+    "PRIN": {
+        "company_name": "Prabhu Insurance Ltd.",
+        "sector": "Non Life Insurance"
+    },
+    "SALICO": {
+        "company_name": "Sagarmatha Lumbini Insurance Co. Limited",
+        "sector": "Non Life Insurance"
+    },
+    "IGI": {
+        "company_name": "IGI Prudential insurance Limited",
+        "sector": "Non Life Insurance"
+    },
+    "NLIC": {
+        "company_name": "Nepal Life Insurance Co. Ltd.",
+        "sector": "Life Insurance"
+    },
+    "LICN": {
+        "company_name": "Life Insurance Corporation (Nepal) Limited",
+        "sector": "Life Insurance"
+    },
+    "SICL": {
+        "company_name": "Shikhar Insurance Co. Ltd.",
+        "sector": "Non Life Insurance"
+    },
+    "NFS": {
+        "company_name": "Nepal Finance Ltd.",
+        "sector": "Finance"
+    },
+    "BNL": {
+        "company_name": "Bottlers Nepal (Balaju) Limited",
+        "sector": "Manufacturing And Processing"
+    },
+    "NLO": {
+        "company_name": "Nepal Lube Oil Limited",
+        "sector": "Manufacturing And Processing"
+    },
+    "GUFL": {
+        "company_name": "Gurkhas Finance Ltd.",
+        "sector": "Finance"
+    },
+    "CIT": {
+        "company_name": "Citizen Investment Trust",
+        "sector": "Investment"
+    },
+    "BNT": {
+        "company_name": "Bottlers Nepal (Terai) Limited",
+        "sector": "Manufacturing And Processing"
+    },
+    "UNL": {
+        "company_name": "Unilever Nepal Limited",
+        "sector": "Manufacturing And Processing"
+    },
+    "BFC": {
+        "company_name": "Best Finance Company Ltd.",
+        "sector": "Finance"
+    },
+    "GFCL": {
+        "company_name": "Goodwill Finance Limited",
+        "sector": "Finance"
+    },
+    "HDL": {
+        "company_name": "Himalayan Distillery Limited",
+        "sector": "Manufacturing And Processing"
+    },
+    "PFL": {
+        "company_name": "Pokhara Finance Ltd.",
+        "sector": "Finance"
+    },
+    "NMB": {
+        "company_name": "NMB Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "SIFC": {
+        "company_name": "Shree Investment Finance Co. Ltd.",
+        "sector": "Finance"
+    },
+    "CFCL": {
+        "company_name": "Central Finance Co. Ltd.",
+        "sector": "Finance"
+    },
+    "JFL": {
+        "company_name": "Janaki Finance Company Limited",
+        "sector": "Finance"
+    },
+    "PRVU": {
+        "company_name": "Prabhu Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "SFCL": {
+        "company_name": "Samriddhi Finance Company Limited",
+        "sector": "Finance"
+    },
+    "GMFIL": {
+        "company_name": "Guheshowori Merchant Bank & Finance Co. Ltd.",
+        "sector": "Finance"
+    },
+    "SWBBL": {
+        "company_name": "Swabalamban Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "ICFC": {
+        "company_name": "ICFC Finance Limited",
+        "sector": "Finance"
+    },
+    "EDBL": {
+        "company_name": "Excel Development Bank Ltd.",
+        "sector": "Development Banks"
+    },
+    "NTC": {
+        "company_name": "Nepal Doorsanchar Company Limited",
+        "sector": "Others"
+    },
+    "PROFL": {
+        "company_name": "Progressive Finance Limited",
+        "sector": "Finance"
+    },
+    "GBIME": {
+        "company_name": "Global IME Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "CZBIL": {
+        "company_name": "Citizens Bank International Limited",
+        "sector": "Commercial Banks"
+    },
+    "PCBL": {
+        "company_name": "Prime Commercial Bank Ltd.",
+        "sector": "Commercial Banks"
+    },
+    "LBBL": {
+        "company_name": "Lumbini Bikas Bank Ltd.",
+        "sector": "Development Banks"
+    },
+    "AHPC": {
+        "company_name": "Arun Valley Hydropower Development Co. Ltd.",
+        "sector": "Hydro Power"
+    },
+    "MDB": {
+        "company_name": "Miteri Development Bank Limited",
+        "sector": "Development Banks"
+    },
+    "ALICL": {
+        "company_name": "Asian Life Insurance Co. Limited",
+        "sector": "Life Insurance"
+    },
+    "HLI": {
+        "company_name": "Himalayan Life Insurance Limited",
+        "sector": "Life Insurance"
+    },
+    "NMLBBL": {
+        "company_name": "Nerude Mirmire Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "ADBL": {
+        "company_name": "Agricultural Development Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "MLBL": {
+        "company_name": "Mahalaxmi Bikas Bank Ltd.",
+        "sector": "Development Banks"
+    },
+    "SJLIC": {
+        "company_name": "SuryaJyoti Life Insurance Company Limited",
+        "sector": "Life Insurance"
+    },
+    "GBBL": {
+        "company_name": "Garima Bikas Bank Limited",
+        "sector": "Development Banks"
+    },
+    "JBBL": {
+        "company_name": "Jyoti Bikas Bank Limited",
+        "sector": "Development Banks"
+    },
+    "CORBL": {
+        "company_name": "Corporate Development Bank Limited",
+        "sector": "Development Banks"
+    },
+    "KSBBL": {
+        "company_name": "Kamana Sewa Bikas Bank Limited",
+        "sector": "Development Banks"
+    },
+    "MPFL": {
+        "company_name": "Multipurpose Finance Company Limited",
+        "sector": "Finance"
+    },
+    "SADBL": {
+        "company_name": "Shangrila Development Bank Ltd.",
+        "sector": "Development Banks"
+    },
+    "SHINE": {
+        "company_name": "Shine Resunga Development Bank Ltd.",
+        "sector": "Development Banks"
+    },
+    "MNBBL": {
+        "company_name": "Muktinath Bikas Bank Ltd.",
+        "sector": "Development Banks"
+    },
+    "FMDBL": {
+        "company_name": "First Micro Finance Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "MFIL": {
+        "company_name": "Manjushree Finance Ltd.",
+        "sector": "Finance"
+    },
+    "NBL": {
+        "company_name": "Nepal Bank Limited",
+        "sector": "Commercial Banks"
+    },
+    "SLBBL": {
+        "company_name": "Swarojgar Laghubitta Bittiya Sanstha Ltd.",
+        "sector": "Microfinance"
+    },
+    "NLG": {
+        "company_name": "NLG Insurance Company Ltd.",
+        "sector": "Non Life Insurance"
+    },
+    "SINDU": {
+        "company_name": "Sindhu Bikash Bank Ltd",
+        "sector": "Development Banks"
+    },
+    "SKBBL": {
+        "company_name": "Sana Kisan Bikas Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "GBLBS": {
+        "company_name": "Grameen Bikas Laghubitta Bittiya Sanstha Ltd.",
+        "sector": "Microfinance"
+    },
+    "RLFL": {
+        "company_name": "Reliance Finance Ltd.",
+        "sector": "Finance"
+    },
+    "SHPC": {
+        "company_name": "Sanima Mai Hydropower Ltd.",
+        "sector": "Hydro Power"
+    },
+    "KMCDB": {
+        "company_name": "Kalika Laghubitta Bittiya Sanstha Ltd",
+        "sector": "Microfinance"
+    },
+    "MLBBL": {
+        "company_name": "Mithila LaghuBitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "RIDI": {
+        "company_name": "Ridi Power Company Limited",
+        "sector": "Hydro Power"
+    },
+    "LLBS": {
+        "company_name": "Laxmi Laghubitta Bittiya Sanstha Ltd.",
+        "sector": "Microfinance"
+    },
+    "BARUN": {
+        "company_name": "Barun Hydropower Co. Ltd.",
+        "sector": "Hydro Power"
+    },
+    "VLBS": {
+        "company_name": "Vijaya laghubitta Bittiya Sanstha Ltd.",
+        "sector": "Microfinance"
+    },
+    "HLBSL": {
+        "company_name": "Himalayan Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "MATRI": {
+        "company_name": "Matribhumi Lagubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "JSLBB": {
+        "company_name": "Janautthan Samudayic Laghubitta Bittya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "API": {
+        "company_name": "Api Power Company Ltd.",
+        "sector": "Hydro Power"
+    },
+    "NMBMF": {
+        "company_name": "NMB Microfinance Bittiya Sanstha Ltd.",
+        "sector": "Microfinance"
+    },
+    "GILB": {
+        "company_name": "Global IME Laghubitta Bittiya Sanstha Ltd.",
+        "sector": "Microfinance"
+    },
+    "SWMF": {
+        "company_name": "Suryodaya Womi Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "MERO": {
+        "company_name": "Mero Microfinance Bittiya Sanstha Ltd.",
+        "sector": "Microfinance"
+    },
+    "HIDCL": {
+        "company_name": "Hydorelectricity Investment and Development Company Ltd",
+        "sector": "Investment"
+    },
+    "NGPL": {
+        "company_name": "Ngadi Group Power Ltd.",
+        "sector": "Hydro Power"
+    },
+    "GRDBL": {
+        "company_name": "Green Development Bank Ltd.",
+        "sector": "Development Banks"
+    },
+    "NMFBS": {
+        "company_name": "National Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "RSDC": {
+        "company_name": "RSDC Laghubitta Bittiya Sanstha Ltd.",
+        "sector": "Microfinance"
+    },
+    "KKHC": {
+        "company_name": "Khanikhola Hydropower Co. Ltd.",
+        "sector": "Hydro Power"
+    },
+    "DHPL": {
+        "company_name": "Dibyashwori Hydropower Ltd.",
+        "sector": "Hydro Power"
+    },
+    "AKPL": {
+        "company_name": "Arun Kabeli Power Ltd.",
+        "sector": "Hydro Power"
+    },
+    "FOWAD": {
+        "company_name": "Forward Microfinance Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "SPDL": {
+        "company_name": "Synergy Power Development Ltd.",
+        "sector": "Hydro Power"
+    },
+    "UMHL": {
+        "company_name": "United Modi Hydropower Ltd.",
+        "sector": "Hydro Power"
+    },
+    "SMATA": {
+        "company_name": "Samata Gharelu Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "CHL": {
+        "company_name": "Chhyangdi Hydropower Ltd.",
+        "sector": "Hydro Power"
+    },
+    "HPPL": {
+        "company_name": "Himalayan Power Partner Ltd.",
+        "sector": "Hydro Power"
+    },
+    "MSLB": {
+        "company_name": "Mahuli Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "NHDL": {
+        "company_name": "Nepal Hydro Developers Ltd.",
+        "sector": "Hydro Power"
+    },
+    "SMB": {
+        "company_name": "Support Microfinance Bittiya Sanstha Ltd.",
+        "sector": "Microfinance"
+    },
+    "USLB": {
+        "company_name": "Unnati Sahakarya Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "RADHI": {
+        "company_name": "Radhi Bidyut Company Ltd",
+        "sector": "Hydro Power"
+    },
+    "WNLB": {
+        "company_name": "Wean Nepal Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "NADEP": {
+        "company_name": "Nadep Laghubittiya bittya Sanstha Ltd.",
+        "sector": "Microfinance"
+    },
+    "PMHPL": {
+        "company_name": "Panchakanya Mai Hydropower Ltd",
+        "sector": "Hydro Power"
+    },
+    "KPCL": {
+        "company_name": "Kalika power Company Ltd",
+        "sector": "Hydro Power"
+    },
+    "AKJCL": {
+        "company_name": "Ankhu Khola Jalvidhyut Company Ltd",
+        "sector": "Hydro Power"
+    },
+    "JOSHI": {
+        "company_name": "Joshi Hydropower Development Company Ltd",
+        "sector": "Hydro Power"
+    },
+    "ACLBSL": {
+        "company_name": "Aarambha Chautari Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "UPPER": {
+        "company_name": "Upper Tamakoshi Hydropower Ltd",
+        "sector": "Hydro Power"
+    },
+    "SLBSL": {
+        "company_name": "Samudayik Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "GHL": {
+        "company_name": "Ghalemdi Hydro Limited",
+        "sector": "Hydro Power"
+    },
+    "ALBSL": {
+        "company_name": "Asha Laghubitta Bittiya Sanstha Ltd",
+        "sector": "Microfinance"
+    },
+    "SHIVM": {
+        "company_name": "SHIVAM CEMENTS LTD",
+        "sector": "Manufacturing And Processing"
+    },
+    "UPCL": {
+        "company_name": "UNIVERSAL POWER COMPANY LTD",
+        "sector": "Hydro Power"
+    },
+    "MHNL": {
+        "company_name": "Mountain Hydro Nepal Limited",
+        "sector": "Hydro Power"
+    },
+    "PPCL": {
+        "company_name": "Panchthar Power Compant Limited",
+        "sector": "Hydro Power"
+    },
+    "GMFBS": {
+        "company_name": "Ganapati Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "HURJA": {
+        "company_name": "Himalaya Urja Bikas Company Limited",
+        "sector": "Hydro Power"
+    },
+    "GLBSL": {
+        "company_name": "Gurans Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "SMFBS": {
+        "company_name": "Swabhimaan Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "UNHPL": {
+        "company_name": "Union Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "ILBS": {
+        "company_name": "Infinity Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "RHPL": {
+        "company_name": "RASUWAGADHI HYDROPOWER COMPANY LIMITED",
+        "sector": "Hydro Power"
+    },
+    "SJCL": {
+        "company_name": "SANJEN JALAVIDHYUT COMPANY LIMITED",
+        "sector": "Hydro Power"
+    },
+    "SAPDBL": {
+        "company_name": "Saptakoshi Development Bank Ltd",
+        "sector": "Development Banks"
+    },
+    "HDHPC": {
+        "company_name": "Himal Dolakha Hydropower Company Limited",
+        "sector": "Hydro Power"
+    },
+    "NRIC": {
+        "company_name": "Nepal Reinsurance Company Limited",
+        "sector": "Others"
+    },
+    "NICLBSL": {
+        "company_name": "NIC ASIA Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "SMPDA": {
+        "company_name": "Sampada Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "NRN": {
+        "company_name": "NRN Infrastructure and Development Limited",
+        "sector": "Investment"
+    },
+    "LEC": {
+        "company_name": "Liberty Energy Company Limited",
+        "sector": "Hydro Power"
+    },
+    "SSHL": {
+        "company_name": "Shiva Shree Hydropower Ltd",
+        "sector": "Hydro Power"
+    },
+    "SGIC": {
+        "company_name": "Sanima GIC Insurance Limited",
+        "sector": "Non Life Insurance"
+    },
+    "MEN": {
+        "company_name": "Mountain Energy Nepal Limited",
+        "sector": "Hydro Power"
+    },
+    "UMRH": {
+        "company_name": "United IDI Mardi RB Hydropower Limited.",
+        "sector": "Hydro Power"
+    },
+    "PMLI": {
+        "company_name": "Prabhu Mahalaxmi Life Insurance Limited",
+        "sector": "Life Insurance"
+    },
+    "CGH": {
+        "company_name": "Chandragiri Hills Limited",
+        "sector": "Hotels And Tourism"
+    },
+    "NIFRA": {
+        "company_name": "Nepal Infrastructure Bank Limited",
+        "sector": "Investment"
+    },
+    "GLH": {
+        "company_name": "GreenLife Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "MLBSL": {
+        "company_name": "Mahila Lagubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "SHEL": {
+        "company_name": "Singati Hydro Energy Limited",
+        "sector": "Hydro Power"
+    },
+    "RURU": {
+        "company_name": "Ru Ru Jalbidhyut Pariyojana Limited",
+        "sector": "Hydro Power"
+    },
+    "CHDC": {
+        "company_name": "CEDB Holdings Limited",
+        "sector": "Investment"
+    },
+    "JBLB": {
+        "company_name": "Jeevan Bikas Laghubitta Bittya Sanstha Ltd",
+        "sector": "Microfinance"
+    },
+    "SRLI": {
+        "company_name": "Sanima Reliance Life Insurance Limited",
+        "sector": "Life Insurance"
+    },
+    "MKJC": {
+        "company_name": "Mailung Khola Jal Vidhyut Company Limited",
+        "sector": "Hydro Power"
+    },
+    "MLBS": {
+        "company_name": "Manushi Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "SAHAS": {
+        "company_name": "Sahas Urja Limited",
+        "sector": "Hydro Power"
+    },
+    "TPC": {
+        "company_name": "Terhathum Power Company Limited",
+        "sector": "Hydro Power"
+    },
+    "SPC": {
+        "company_name": "Samling Power Company Limited",
+        "sector": "Hydro Power"
+    },
+    "NYADI": {
+        "company_name": "Nyadi Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "MBJC": {
+        "company_name": "Madhya Bhotekoshi Jalavidyut Company Limited",
+        "sector": "Hydro Power"
+    },
+    "BNHC": {
+        "company_name": "Buddha Bhumi Nepal Hydropower Company Limited",
+        "sector": "Hydro Power"
+    },
+    "ENL": {
+        "company_name": "Emerging Nepal Limited",
+        "sector": "Investment"
+    },
+    "NESDO": {
+        "company_name": "NESDO Sambridha Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "GVL": {
+        "company_name": "Green Ventures Limited",
+        "sector": "Hydro Power"
+    },
+    "BHL": {
+        "company_name": "Balephi Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "ULBSL": {
+        "company_name": "Upakar Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "CYCL": {
+        "company_name": "CYC Nepal Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "RFPL": {
+        "company_name": "River Falls Power Limited",
+        "sector": "Hydro Power"
+    },
+    "DORDI": {
+        "company_name": "Dordi Khola Jal Bidyut Company Limited",
+        "sector": "Hydro Power"
+    },
+    "BHDC": {
+        "company_name": "Bindhyabasini Hydropower Development Company Limited",
+        "sector": "Hydro Power"
+    },
+    "HHL": {
+        "company_name": "Himalayan Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "UHEWA": {
+        "company_name": "Upper Hewakhola Hydropower Company Limited",
+        "sector": "Hydro Power"
+    },
+    "SGHC": {
+        "company_name": "Swet-Ganga Hydropower & Construction Limited",
+        "sector": "Hydro Power"
+    },
+    "MHL": {
+        "company_name": "Mandakini Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "USHEC": {
+        "company_name": "Upper Solu Hydro Electric Company Limited",
+        "sector": "Hydro Power"
+    },
+    "RHGCL": {
+        "company_name": "Rapti Hydro And General Construction Limited",
+        "sector": "Hydro Power"
+    },
+    "AVYAN": {
+        "company_name": "Aviyan Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "SPHL": {
+        "company_name": "Sayapatri Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "PPL": {
+        "company_name": "People's Power Limited",
+        "sector": "Hydro Power"
+    },
+    "DLBS": {
+        "company_name": "Dhaulagiri Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "SIKLES": {
+        "company_name": "Sikles Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "EHPL": {
+        "company_name": "Eastern Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "SHLB": {
+        "company_name": "Shrijanshil Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "PHCL": {
+        "company_name": "Peoples Hydropower Company Limited",
+        "sector": "Hydro Power"
+    },
+    "BHPL": {
+        "company_name": "Barahi Hydropower Public Limited",
+        "sector": "Hydro Power"
+    },
+    "UNLB": {
+        "company_name": "Unique Nepal Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "SMHL": {
+        "company_name": "Super Madi Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "SPL": {
+        "company_name": "Shuvam Power Limited",
+        "sector": "Hydro Power"
+    },
+    "SMH": {
+        "company_name": "Super Mai Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "MKHC": {
+        "company_name": "Maya Khola Hydropower Company Limited",
+        "sector": "Hydro Power"
+    },
+    "AHL": {
+        "company_name": "Asian Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "KDL": {
+        "company_name": "Kalinchowk Darshan Limited",
+        "sector": "Hotels And Tourism"
+    },
+    "TAMOR": {
+        "company_name": "Sanima Middle Tamor Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "MHCL": {
+        "company_name": "Molung Hydropower Company Limited",
+        "sector": "Hydro Power"
+    },
+    "SMJC": {
+        "company_name": "Sagarmatha Jalabidhyut Company Limited",
+        "sector": "Hydro Power"
+    },
+    "ANLB": {
+        "company_name": "Aatmanirbhar Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "MAKAR": {
+        "company_name": "Makar Jitumaya Suri Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "MKHL": {
+        "company_name": "Mai Khola Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "DOLTI": {
+        "company_name": "Dolti Power Company Limited",
+        "sector": "Hydro Power"
+    },
+    "BEDC": {
+        "company_name": "Bhugol Energy Development Company Limited",
+        "sector": "Hydro Power"
+    },
+    "CITY": {
+        "company_name": "City Hotel Limited",
+        "sector": "Hotels And Tourism"
+    },
+    "MCHL": {
+        "company_name": "Menchhiyam Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "IHL": {
+        "company_name": "Ingwa Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "MEL": {
+        "company_name": "Modi Energy Limited",
+        "sector": "Hydro Power"
+    },
+    "RAWA": {
+        "company_name": "Rawa Energy Development Limited",
+        "sector": "Hydro Power"
+    },
+    "NRM": {
+        "company_name": "Nepal Republic Media Limited",
+        "sector": "Others"
+    },
+    "ILI": {
+        "company_name": "IME Life Insurance Company Limited",
+        "sector": "Life Insurance"
+    },
+    "USHL": {
+        "company_name": "Upper Syange Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "GCIL": {
+        "company_name": "Ghorahi Cement Industry Limited",
+        "sector": "Manufacturing And Processing"
+    },
+    "TSHL": {
+        "company_name": "Three Star Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "KBSH": {
+        "company_name": "Kutheli Bukhari Small Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "RNLI": {
+        "company_name": "Reliable Nepal Life Insurance Limited",
+        "sector": "Life Insurance"
+    },
+    "SNLI": {
+        "company_name": "Sun Nepal Life Insurance Company Limited",
+        "sector": "Life Insurance"
+    },
+    "MEHL": {
+        "company_name": "Manakamana Engineering Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "ULHC": {
+        "company_name": "Upper Lohore Khola Hydropower Company Limited",
+        "sector": "Hydro Power"
+    },
+    "CLI": {
+        "company_name": "Citizen Life Insurance Company Limited",
+        "sector": "Life Insurance"
+    },
+    "MANDU": {
+        "company_name": "Mandu Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "HATHY": {
+        "company_name": "Hathway Investment Nepal Limited",
+        "sector": "Investment"
+    },
+    "BGWT": {
+        "company_name": "Bhagawati Hydropower Development Company Limited",
+        "sector": "Hydro Power"
+    },
+    "MSHL": {
+        "company_name": "Mid Solu Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "SONA": {
+        "company_name": "Sonapur Minerals And Oil Limited",
+        "sector": "Manufacturing And Processing"
+    },
+    "MMKJL": {
+        "company_name": "Mathillo Mailun Khola Jalvidhyut Limited",
+        "sector": "Hydro Power"
+    },
+    "TVCL": {
+        "company_name": "Trishuli Jal Vidhyut Company Limited",
+        "sector": "Hydro Power"
+    },
+    "VLUCL": {
+        "company_name": "Vision Lumbini Urja Company Limited",
+        "sector": "Hydro Power"
+    },
+    "MKCL": {
+        "company_name": "Muktinath Krishi Company Limited",
+        "sector": "Others"
+    },
+    "CKHL": {
+        "company_name": "Chirkhwa Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "NWCL": {
+        "company_name": "Nepal Warehousing Company Limited",
+        "sector": "Others"
+    },
+    "HRL": {
+        "company_name": "Himalayan Reinsurance Limited",
+        "sector": "Others"
+    },
+    "SARBTM": {
+        "company_name": "Sarbottam Cement Limited",
+        "sector": "Manufacturing And Processing"
+    },
+    "GMLI": {
+        "company_name": "Guardian Micro Life Insurance Limited",
+        "sector": "Life Insurance"
+    },
+    "NMIC": {
+        "company_name": "Nepal Micro Insurance Company Limited",
+        "sector": "Non Life Insurance"
+    },
+    "CREST": {
+        "company_name": "Crest Micro Life Insurance Limited",
+        "sector": "Life Insurance"
+    },
+    "OMPL": {
+        "company_name": "Om Megashree Pharmaceuticals Limited",
+        "sector": "Manufacturing And Processing"
+    },
+    "PURE": {
+        "company_name": "Pure Energy Limited",
+        "sector": "Others"
+    },
+    "TTL": {
+        "company_name": "Trade Tower Limited",
+        "sector": "Others"
+    },
+    "SANVI": {
+        "company_name": "Sanvi Energy Limited",
+        "sector": "Hydro Power"
+    },
+    "BHCL": {
+        "company_name": "Bikash Hydropower Company Limited",
+        "sector": "Hydro Power"
+    },
+    "HIMSTAR": {
+        "company_name": "Him Star Urja Company Limited",
+        "sector": "Hydro Power"
+    },
+    "MABEL": {
+        "company_name": "Mabilung Energy Limited",
+        "sector": "Hydro Power"
+    },
+    "DHEL": {
+        "company_name": "Daramkhola Hydro Energy Limited",
+        "sector": "Hydro Power"
+    },
+    "SAGAR": {
+        "company_name": "Sagar Distillery Limited",
+        "sector": "Manufacturing And Processing"
+    },
+    "SWASTIK": {
+        "company_name": "Swastik Laghubitta Bittiya Sanstha Limited",
+        "sector": "Microfinance"
+    },
+    "BUNGAL": {
+        "company_name": "Bungal Hydro Limited",
+        "sector": "Hydro Power"
+    },
+    "BANDIPUR": {
+        "company_name": "Bandipur Cablecar and Tourism Limited",
+        "sector": "Hotels And Tourism"
+    },
+    "JHAPA": {
+        "company_name": "Jhapa Energy Limited",
+        "sector": "Others"
+    },
+    "SAIL": {
+        "company_name": "Shreenagar Agritech Industries Limited",
+        "sector": "Manufacturing And Processing"
+    },
+    "SYPNL": {
+        "company_name": "SY Panel Nepal Limited",
+        "sector": "Manufacturing And Processing"
+    },
+    "SABBL": {
+        "company_name": "Salapa Bikas Bank Limited",
+        "sector": "Development Banks"
+    },
+    "RSML": {
+        "company_name": "Reliance Spinning Mills Limited",
+        "sector": "Manufacturing And Processing"
+    },
+    "HFIN": {
+        "company_name": "Hotel Forest Inn Limited",
+        "sector": "Hotels And Tourism"
+    },
+    "SOHL": {
+        "company_name": "Solu Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "BJHL": {
+        "company_name": "Bhujung Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "SKHL": {
+        "company_name": "Super Khudi Hydropower Limited",
+        "sector": "Hydro Power"
+    },
+    "RLEL": {
+        "company_name": "Ridge Line Energy Limited",
+        "sector": "Hydro Power"
+    },
+    "SKHEL": {
+        "company_name": "Suryakunda Hydro Electric Limited",
+        "sector": "Hydro Power"
+    },
+    "SIPD": {
+        "company_name": "Shikhar power Development Limited",
+        "sector": "Hydro Power"
+    },
+    "PCIL": {
+        "company_name": "Palpa Cement Industries Limited",
+        "sector": "Manufacturing And Processing"
+    }
+}

@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@media (max-width: 560px) {
+	.nepse-shell {
+		width: min(100% - 20px, 1180px);
+		padding-top: 14px;
+	}
+
+	.hero-card,
+	.controls-card,
+	.table-card {
+		padding: 18px;
+		border-radius: 22px;
+	}
+
+	.hero-badges,
+	.market-filters {
+		gap: 8px;
+	}
+}
