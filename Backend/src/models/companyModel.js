@@ -27,4 +27,14 @@ const companyModel = sequelize.define(
   },
 );
 
+// Define associations after model is defined
+companyModel.associate = (models) => {
+  if (models.financial_data) {
+    companyModel.hasMany(models.financial_data, {
+      foreignKey: "company_id",
+      as: "financialData",
+    });
+  }
+};
+
 export default companyModel;

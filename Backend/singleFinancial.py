@@ -32,7 +32,13 @@ def post_with_retries(url, json_payload, retries=3, timeout=10, backoff=2):
 
     raise last_exc
 
-scrip = scrips[8]
+scrip = scrips[9]  # Example: selecting the 10th scrip for testing
+
+# for dat in scrips:
+#     if dat["symbol"] == "RSML":
+#         print(dat)
+#         scrip = dat
+
 url = f"https://nepsealpha.com/search?q={scrip['symbol']}"
 
 driver.get(url)

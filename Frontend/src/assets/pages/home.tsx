@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 type Company = {
   id: number;
@@ -8,6 +9,7 @@ type Company = {
 };
 
 function Home() {
+  const navigate = useNavigate();
   const [companies, setCompanies] = useState<Company[]>([]);
   const [query, setQuery] = useState("");
   const [selectedSector, setSelectedSector] = useState("All");
@@ -161,7 +163,12 @@ function Home() {
                         {index + 1}
                       </td>
                       <td className="px-4 py-4 font-semibold tracking-wide text-amber-300">
-                        <button className="cursor-pointer">
+                        <button
+                          onClick={() =>
+                            navigate(`/financial/${company.symbol}`)
+                          }
+                          className="cursor-pointer transition hover:text-amber-200 hover:underline"
+                        >
                           {company.symbol}
                         </button>
                       </td>

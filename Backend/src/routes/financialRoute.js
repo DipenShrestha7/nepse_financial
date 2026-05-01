@@ -81,13 +81,47 @@ function financialRoutes(fastify) {
 
   fastify.get("/financial", async (request, reply) => {
     try {
-      const { scrip, quarter } = request.query;
+      const { scrip } = request.query;
 
-      if (!scrip || !quarter) {
+      if (!scrip) {
         return reply.status(400).send({
-          error: "scrip and quarter query parameters are required",
+          error: "scrip query parameter is required",
         });
       }
+
+      // Find the company by scrip/symbol
+      const company = await companyModel.findOne({
+        where: { symbol: scrip },
+      });
+
+      if (!company) {
+        return reply.status(404).send({ error: "Company not found" });
+      }
+
+      // Fetch financial records with metric information
+      const financialData = await financialModel.findAll({
+        where: { company_id: company.id },
+        include: [
+          {
+            model: metricsModel,
+            as: "metric",
+            attributes: ["name"],
+          },
+        ],
+      });
+
+      if (financialData.length === 0) {
+        return reply.status(200).send([]);
+      }
+
+      // Transform the data to match frontend expectations
+      const formattedData = financialData.map((record) => ({
+        quarter: record.quarter,
+        metricName: record.metric?.name || "Unknown",
+        value: record.value,
+      }));
+
+      return reply.status(200).send(formattedData);
     } catch (err) {
       console.error("Error fetching financial data:", err);
       reply.status(500).send({ error: "Failed to fetch financial data" });

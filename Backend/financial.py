@@ -78,7 +78,7 @@ def load_tables(driver, url, symbol, retries=2):
 
     return None
 
-scrip5 = scrips[0]
+scrip5 = scrips[9:14]
 
 for scrip in scrip5:
     url = f"https://nepsealpha.com/search?q={scrip['symbol']}"

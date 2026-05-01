@@ -19,4 +19,14 @@ const Metrics = sequelize.define(
   },
 );
 
+// Define associations after model is defined
+Metrics.associate = (models) => {
+  if (models.financial_data) {
+    Metrics.hasMany(models.financial_data, {
+      foreignKey: "metric_id",
+      as: "financialData",
+    });
+  }
+};
+
 export default Metrics;
