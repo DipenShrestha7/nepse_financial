@@ -22,7 +22,7 @@ const financialModel = sequelize.define(
       allowNull: true,
     },
     value: {
-      type: DataTypes.DECIMAL(10, 2),
+      type: DataTypes.STRING,
       allowNull: true,
     },
   },

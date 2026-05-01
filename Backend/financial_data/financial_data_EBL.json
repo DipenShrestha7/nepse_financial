@@ -1,0 +1,154 @@
+[
+    {
+        "scrip": "EBL",
+        "quarter": "080-081Q4",
+        "metrics": {
+            "PE Ratio": "22.9",
+            "PB Ratio": "3.0",
+            "PS Ratio": "3.5",
+            "ROE TTM": "14.05 %",
+            "ROA TTM": "1.37 %",
+            "Net Margin TTM": "16.48 %",
+            "Asset Turnover TTM": "8.30 %",
+            "EPS TTM": "26.97",
+            "BVPS": "202.45",
+            "Net Profit Till Qtr": "370.06 Cr.",
+            "Revenue Till Qtr": "2,245.49 Cr.",
+            "Net Profit TTM": "370.06 Cr.",
+            "Revenue TTM": "2,245.49 Cr."
+        }
+    },
+    {
+        "scrip": "EBL",
+        "quarter": "081-082Q1",
+        "metrics": {
+            "PE Ratio": "21.2",
+            "PB Ratio": "2.8",
+            "PS Ratio": "3.5",
+            "ROE TTM": "15.04 %",
+            "ROA TTM": "1.45 %",
+            "Net Margin TTM": "18.40 %",
+            "Asset Turnover TTM": "7.90 %",
+            "EPS TTM": "29.50",
+            "BVPS": "206.61",
+            "Net Profit Till Qtr": "112.77 Cr.",
+            "Revenue Till Qtr": "538.19 Cr.",
+            "Net Profit TTM": "404.76 Cr.",
+            "Revenue TTM": "2,199.79 Cr."
+        }
+    },
+    {
+        "scrip": "EBL",
+        "quarter": "081-082Q2",
+        "metrics": {
+            "PE Ratio": "19.0",
+            "PB Ratio": "2.6",
+            "PS Ratio": "3.7",
+            "ROE TTM": "14.73 %",
+            "ROA TTM": "1.40 %",
+            "Net Margin TTM": "19.10 %",
+            "Asset Turnover TTM": "7.35 %",
+            "EPS TTM": "29.61",
+            "BVPS": "213.01",
+            "Net Profit Till Qtr": "207.48 Cr.",
+            "Revenue Till Qtr": "1,030.05 Cr.",
+            "Net Profit TTM": "406.23 Cr.",
+            "Revenue TTM": "2,127.22 Cr."
+        }
+    },
+    {
+        "scrip": "EBL",
+        "quarter": "081-082Q3",
+        "metrics": {
+            "PE Ratio": "20.1",
+            "PB Ratio": "2.8",
+            "PS Ratio": "3.8",
+            "ROE TTM": "15.96 %",
+            "ROA TTM": "1.52 %",
+            "Net Margin TTM": "21.72 %",
+            "Asset Turnover TTM": "6.98 %",
+            "EPS TTM": "33.16",
+            "BVPS": "222.14",
+            "Net Profit Till Qtr": "345.76 Cr.",
+            "Revenue Till Qtr": "1,545.83 Cr.",
+            "Net Profit TTM": "454.98 Cr.",
+            "Revenue TTM": "2,094.31 Cr."
+        }
+    },
+    {
+        "scrip": "EBL",
+        "quarter": "081-082Q4",
+        "metrics": {
+            "PE Ratio": "20.2",
+            "PB Ratio": "3.0",
+            "PS Ratio": "4.4",
+            "ROE TTM": "16.63 %",
+            "ROA TTM": "1.55 %",
+            "Net Margin TTM": "23.62 %",
+            "Asset Turnover TTM": "6.56 %",
+            "EPS TTM": "35.84",
+            "BVPS": "233.38",
+            "Net Profit Till Qtr": "491.82 Cr.",
+            "Revenue Till Qtr": "2,081.90 Cr.",
+            "Net Profit TTM": "491.82 Cr.",
+            "Revenue TTM": "2,081.90 Cr."
+        }
+    },
+    {
+        "scrip": "EBL",
+        "quarter": "082-083Q1",
+        "metrics": {
+            "PE Ratio": "17.5",
+            "PB Ratio": "2.7",
+            "PS Ratio": "4.1",
+            "ROE TTM": "16.22 %",
+            "ROA TTM": "1.49 %",
+            "Net Margin TTM": "23.95 %",
+            "Asset Turnover TTM": "6.21 %",
+            "EPS TTM": "36.22",
+            "BVPS": "241.22",
+            "Net Profit Till Qtr": "117.93 Cr.",
+            "Revenue Till Qtr": "530.93 Cr.",
+            "Net Profit TTM": "496.97 Cr.",
+            "Revenue TTM": "2,074.64 Cr."
+        }
+    },
+    {
+        "scrip": "EBL",
+        "quarter": "082-083Q2",
+        "metrics": {
+            "PE Ratio": "18.6",
+            "PB Ratio": "2.9",
+            "PS Ratio": "4.5",
+            "ROE TTM": "15.79 %",
+            "ROA TTM": "1.41 %",
+            "Net Margin TTM": "23.97 %",
+            "Asset Turnover TTM": "5.90 %",
+            "EPS TTM": "36.15",
+            "BVPS": "235.04",
+            "Net Profit Till Qtr": "211.71 Cr.",
+            "Revenue Till Qtr": "1,017.81 Cr.",
+            "Net Profit TTM": "496.05 Cr.",
+            "Revenue TTM": "2,069.65 Cr."
+        }
+    },
+    {
+        "scrip": "EBL",
+        "quarter": "082-083Q3",
+        "metrics": {
+            "PE Ratio": "20.0",
+            "PB Ratio": "2.9",
+            "PS Ratio": "4.6",
+            "ROE TTM": "14.84 %",
+            "ROA TTM": "1.32 %",
+            "Net Margin TTM": "23.51 %",
+            "Asset Turnover TTM": "5.60 %",
+            "EPS TTM": "34.91",
+            "BVPS": "244.27",
+            "Net Profit Till Qtr": "332.93 Cr.",
+            "Revenue Till Qtr": "1,501.66 Cr.",
+            "Net Profit TTM": "478.98 Cr.",
+            "Revenue TTM": "2,037.72 Cr."
+        }
+    }
+]

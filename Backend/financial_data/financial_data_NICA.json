@@ -1,0 +1,154 @@
+[
+    {
+        "scrip": "NICA",
+        "quarter": "080-081Q4",
+        "metrics": {
+            "PE Ratio": "29.0",
+            "PB Ratio": "2.4",
+            "PS Ratio": "1.8",
+            "ROE TTM": "4.57 %",
+            "ROA TTM": "0.42 %",
+            "Net Margin TTM": "3.60 %",
+            "Asset Turnover TTM": "11.59 %",
+            "EPS TTM": "9.26",
+            "BVPS": "202.24",
+            "Net Profit Till Qtr": "138.19 Cr.",
+            "Revenue Till Qtr": "3,837.50 Cr.",
+            "Net Profit TTM": "138.19 Cr.",
+            "Revenue TTM": "3,837.50 Cr."
+        }
+    },
+    {
+        "scrip": "NICA",
+        "quarter": "081-082Q1",
+        "metrics": {
+            "PE Ratio": "48.8",
+            "PB Ratio": "2.2",
+            "PS Ratio": "1.8",
+            "ROE TTM": "1.59 %",
+            "ROA TTM": "0.14 %",
+            "Net Margin TTM": "1.31 %",
+            "Asset Turnover TTM": "10.89 %",
+            "EPS TTM": "3.23",
+            "BVPS": "203.79",
+            "Net Profit Till Qtr": "11.05 Cr.",
+            "Revenue Till Qtr": "849.15 Cr.",
+            "Net Profit TTM": "48.20 Cr.",
+            "Revenue TTM": "3,669.79 Cr."
+        }
+    },
+    {
+        "scrip": "NICA",
+        "quarter": "081-082Q2",
+        "metrics": {
+            "PE Ratio": "-144.1",
+            "PB Ratio": "1.8",
+            "PS Ratio": "1.6",
+            "ROE TTM": "-",
+            "ROA TTM": "-0.11 %",
+            "Net Margin TTM": "-1.11 %",
+            "Asset Turnover TTM": "10.33 %",
+            "EPS TTM": "-2.48",
+            "BVPS": "198.92",
+            "Net Profit Till Qtr": "15.17 Cr.",
+            "Revenue Till Qtr": "1,565.29 Cr.",
+            "Net Profit TTM": "-3,702.08 Lac.",
+            "Revenue TTM": "3,348.24 Cr."
+        }
+    },
+    {
+        "scrip": "NICA",
+        "quarter": "081-082Q3",
+        "metrics": {
+            "PE Ratio": "-146.6",
+            "PB Ratio": "1.8",
+            "PS Ratio": "1.6",
+            "ROE TTM": "-",
+            "ROA TTM": "-0.12 %",
+            "Net Margin TTM": "-1.20 %",
+            "Asset Turnover TTM": "10.20 %",
+            "EPS TTM": "-2.52",
+            "BVPS": "199.30",
+            "Net Profit Till Qtr": "15.68 Cr.",
+            "Revenue Till Qtr": "2,246.93 Cr.",
+            "Net Profit TTM": "-3,762.46 Lac.",
+            "Revenue TTM": "3,142.36 Cr."
+        }
+    },
+    {
+        "scrip": "NICA",
+        "quarter": "081-082Q4",
+        "metrics": {
+            "PE Ratio": "321.9",
+            "PB Ratio": "1.8",
+            "PS Ratio": "1.8",
+            "ROE TTM": "0.54 %",
+            "ROA TTM": "0.05 %",
+            "Net Margin TTM": "0.56 %",
+            "Asset Turnover TTM": "9.47 %",
+            "EPS TTM": "1.08",
+            "BVPS": "197.90",
+            "Net Profit Till Qtr": "16.16 Cr.",
+            "Revenue Till Qtr": "2,881.62 Cr.",
+            "Net Profit TTM": "16.16 Cr.",
+            "Revenue TTM": "2,881.62 Cr."
+        }
+    },
+    {
+        "scrip": "NICA",
+        "quarter": "082-083Q1",
+        "metrics": {
+            "PE Ratio": "272.3",
+            "PB Ratio": "1.6",
+            "PS Ratio": "1.8",
+            "ROE TTM": "0.58 %",
+            "ROA TTM": "0.05 %",
+            "Net Margin TTM": "0.65 %",
+            "Asset Turnover TTM": "7.07 %",
+            "EPS TTM": "1.16",
+            "BVPS": "198.74",
+            "Net Profit Till Qtr": "12.22 Cr.",
+            "Revenue Till Qtr": "633.50 Cr.",
+            "Net Profit TTM": "17.32 Cr.",
+            "Revenue TTM": "2,665.97 Cr."
+        }
+    },
+    {
+        "scrip": "NICA",
+        "quarter": "082-083Q2",
+        "metrics": {
+            "PE Ratio": "290.5",
+            "PB Ratio": "1.7",
+            "PS Ratio": "1.9",
+            "ROE TTM": "0.48 %",
+            "ROA TTM": "0.04 %",
+            "Net Margin TTM": "0.56 %",
+            "Asset Turnover TTM": "6.70 %",
+            "EPS TTM": "0.95",
+            "BVPS": "198.33",
+            "Net Profit Till Qtr": "13.12 Cr.",
+            "Revenue Till Qtr": "1,203.31 Cr.",
+            "Net Profit TTM": "14.10 Cr.",
+            "Revenue TTM": "2,519.64 Cr."
+        }
+    },
+    {
+        "scrip": "NICA",
+        "quarter": "082-083Q3",
+        "metrics": {
+            "PE Ratio": "379.7",
+            "PB Ratio": "1.8",
+            "PS Ratio": "2.2",
+            "ROE TTM": "0.50 %",
+            "ROA TTM": "0.04 %",
+            "Net Margin TTM": "0.61 %",
+            "Asset Turnover TTM": "6.27 %",
+            "EPS TTM": "0.97",
+            "BVPS": "172.97",
+            "Net Profit Till Qtr": "14.03 Cr.",
+            "Revenue Till Qtr": "1,748.79 Cr.",
+            "Net Profit TTM": "14.51 Cr.",
+            "Revenue TTM": "2,383.48 Cr."
+        }
+    }
+]

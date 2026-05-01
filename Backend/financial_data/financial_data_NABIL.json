@@ -1,0 +1,154 @@
+[
+    {
+        "scrip": "NABIL",
+        "quarter": "080-081Q4",
+        "metrics": {
+            "PE Ratio": "25.2",
+            "PB Ratio": "3.2",
+            "PS Ratio": "3.5",
+            "ROE TTM": "12.24 %",
+            "ROA TTM": "1.36 %",
+            "Net Margin TTM": "15.25 %",
+            "Asset Turnover TTM": "8.92 %",
+            "EPS TTM": "22.02",
+            "BVPS": "185.82",
+            "Net Profit Till Qtr": "706.00 Cr.",
+            "Revenue Till Qtr": "4,630.31 Cr.",
+            "Net Profit TTM": "706.00 Cr.",
+            "Revenue TTM": "4,630.31 Cr."
+        }
+    },
+    {
+        "scrip": "NABIL",
+        "quarter": "081-082Q1",
+        "metrics": {
+            "PE Ratio": "21.0",
+            "PB Ratio": "2.6",
+            "PS Ratio": "3.6",
+            "ROE TTM": "13.08 %",
+            "ROA TTM": "1.42 %",
+            "Net Margin TTM": "17.00 %",
+            "Asset Turnover TTM": "8.34 %",
+            "EPS TTM": "23.86",
+            "BVPS": "193.69",
+            "Net Profit Till Qtr": "205.66 Cr.",
+            "Revenue Till Qtr": "1,082.00 Cr.",
+            "Net Profit TTM": "764.73 Cr.",
+            "Revenue TTM": "4,499.13 Cr."
+        }
+    },
+    {
+        "scrip": "NABIL",
+        "quarter": "081-082Q2",
+        "metrics": {
+            "PE Ratio": "18.5",
+            "PB Ratio": "2.2",
+            "PS Ratio": "3.1",
+            "ROE TTM": "12.13 %",
+            "ROA TTM": "1.28 %",
+            "Net Margin TTM": "16.56 %",
+            "Asset Turnover TTM": "7.71 %",
+            "EPS TTM": "22.15",
+            "BVPS": "184.85",
+            "Net Profit Till Qtr": "324.43 Cr.",
+            "Revenue Till Qtr": "2,041.94 Cr.",
+            "Net Profit TTM": "710.12 Cr.",
+            "Revenue TTM": "4,287.88 Cr."
+        }
+    },
+    {
+        "scrip": "NABIL",
+        "quarter": "081-082Q3",
+        "metrics": {
+            "PE Ratio": "18.7",
+            "PB Ratio": "2.2",
+            "PS Ratio": "3.1",
+            "ROE TTM": "12.47 %",
+            "ROA TTM": "1.30 %",
+            "Net Margin TTM": "18.08 %",
+            "Asset Turnover TTM": "7.17 %",
+            "EPS TTM": "23.22",
+            "BVPS": "191.06",
+            "Net Profit Till Qtr": "505.14 Cr.",
+            "Revenue Till Qtr": "3,031.38 Cr.",
+            "Net Profit TTM": "744.34 Cr.",
+            "Revenue TTM": "4,117.74 Cr."
+        }
+    },
+    {
+        "scrip": "NABIL",
+        "quarter": "081-082Q4",
+        "metrics": {
+            "PE Ratio": "19.9",
+            "PB Ratio": "2.2",
+            "PS Ratio": "3.5",
+            "ROE TTM": "11.65 %",
+            "ROA TTM": "1.20 %",
+            "Net Margin TTM": "17.61 %",
+            "Asset Turnover TTM": "6.79 %",
+            "EPS TTM": "22.23",
+            "BVPS": "198.83",
+            "Net Profit Till Qtr": "712.76 Cr.",
+            "Revenue Till Qtr": "4,047.05 Cr.",
+            "Net Profit TTM": "712.76 Cr.",
+            "Revenue TTM": "4,047.05 Cr."
+        }
+    },
+    {
+        "scrip": "NABIL",
+        "quarter": "082-083Q1",
+        "metrics": {
+            "PE Ratio": "20.1",
+            "PB Ratio": "2.1",
+            "PS Ratio": "3.5",
+            "ROE TTM": "10.96 %",
+            "ROA TTM": "1.10 %",
+            "Net Margin TTM": "17.31 %",
+            "Asset Turnover TTM": "6.37 %",
+            "EPS TTM": "21.30",
+            "BVPS": "203.18",
+            "Net Profit Till Qtr": "175.70 Cr.",
+            "Revenue Till Qtr": "980.11 Cr.",
+            "Net Profit TTM": "682.80 Cr.",
+            "Revenue TTM": "3,945.16 Cr."
+        }
+    },
+    {
+        "scrip": "NABIL",
+        "quarter": "082-083Q2",
+        "metrics": {
+            "PE Ratio": "18.4",
+            "PB Ratio": "2.3",
+            "PS Ratio": "4.1",
+            "ROE TTM": "13.58 %",
+            "ROA TTM": "1.35 %",
+            "Net Margin TTM": "22.02 %",
+            "Asset Turnover TTM": "6.12 %",
+            "EPS TTM": "26.96",
+            "BVPS": "214.49",
+            "Net Profit Till Qtr": "475.96 Cr.",
+            "Revenue Till Qtr": "1,920.08 Cr.",
+            "Net Profit TTM": "864.29 Cr.",
+            "Revenue TTM": "3,925.19 Cr."
+        }
+    },
+    {
+        "scrip": "NABIL",
+        "quarter": "082-083Q3",
+        "metrics": {
+            "PE Ratio": "19.5",
+            "PB Ratio": "2.4",
+            "PS Ratio": "4.2",
+            "ROE TTM": "13.41 %",
+            "ROA TTM": "1.32 %",
+            "Net Margin TTM": "22.90 %",
+            "Asset Turnover TTM": "5.78 %",
+            "EPS TTM": "27.58",
+            "BVPS": "220.95",
+            "Net Profit Till Qtr": "676.46 Cr.",
+            "Revenue Till Qtr": "2,844.37 Cr.",
+            "Net Profit TTM": "884.08 Cr.",
+            "Revenue TTM": "3,860.04 Cr."
+        }
+    }
+]
