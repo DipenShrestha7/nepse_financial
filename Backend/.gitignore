@@ -1,2 +1,5 @@
 node_modules/
 .venv/
+insert_format_data/
+financial_data/
+.vscode/
