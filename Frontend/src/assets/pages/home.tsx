@@ -1,5 +1,15 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  FiBarChart2,
+  FiBriefcase,
+  FiChevronDown,
+  FiGitMerge,
+  FiGrid,
+  FiLayers,
+  FiSearch,
+  FiTrendingUp,
+} from "react-icons/fi";
 
 type Company = {
   id: number;
@@ -63,54 +73,109 @@ function Home() {
     });
   }, [companies, query, selectedSector]);
 
+  const totalSectors = Math.max(sectors.length - 1, 0);
+
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100">
-      <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-6 sm:px-6 lg:px-8">
-        <header className="mb-5 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 shadow-lg shadow-black/20 backdrop-blur">
-          <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-            NEPSE Companies
-          </h1>
-          <p className="mt-1 text-sm text-slate-300">
-            Company name, scrip, and sector list.
-          </p>
+    <main className="market-page">
+      <div className="market-shell">
+        <header className="panel flex flex-wrap items-start justify-between gap-4 px-5 py-5 max-[560px]:px-3.5 max-[560px]:py-3.5">
+          <div>
+            <p className="mb-2 inline-flex items-center gap-2 font-['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.11em] text-[#81efdf]">
+              <FiGrid /> Market Directory
+            </p>
+            <h1 className="m-0 text-[clamp(1.45rem,2.2vw,2rem)] font-bold tracking-[-0.015em] max-[560px]:text-[1.34rem]">
+              NEPSE Company Explorer
+            </h1>
+            <p className="mt-1.5 text-[0.92rem] text-[#9fb0d4]">
+              Search, filter, and jump into financial insights with one click.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2.5">
+            <button
+              onClick={() => navigate("/comparison")}
+              className="btn-primary"
+            >
+              <FiGitMerge /> Compare Companies
+            </button>
+          </div>
         </header>
 
-        <section className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg shadow-black/20 backdrop-blur sm:p-5">
-          <div className="mb-4 grid w-full gap-3 sm:grid-cols-2 sm:items-end">
-            <label className="block w-full">
-              <span className="mb-2 block text-sm font-medium text-slate-300">
+        <section className="grid grid-cols-3 gap-4 max-[560px]:grid-cols-1">
+          <article className="panel kpi-card">
+            <div className="flex items-center gap-2 font-['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.06em] text-[#9fb0d4]">
+              <FiBriefcase /> Listed Companies
+            </div>
+            <div className="text-[clamp(1.3rem,2.4vw,1.8rem)] font-bold leading-tight">
+              {companies.length}
+            </div>
+            <div className="text-[0.8rem] text-[#8be7dc]">
+              Available in this session
+            </div>
+          </article>
+
+          <article className="panel kpi-card">
+            <div className="flex items-center gap-2 font-['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.06em] text-[#9fb0d4]">
+              <FiLayers /> Sectors
+            </div>
+            <div className="text-[clamp(1.3rem,2.4vw,1.8rem)] font-bold leading-tight">
+              {totalSectors}
+            </div>
+            <div className="text-[0.8rem] text-[#8be7dc]">
+              Distinct market segments
+            </div>
+          </article>
+
+          <article className="panel kpi-card">
+            <div className="flex items-center gap-2 font-['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.06em] text-[#9fb0d4]">
+              <FiTrendingUp /> Filtered Results
+            </div>
+            <div className="text-[clamp(1.3rem,2.4vw,1.8rem)] font-bold leading-tight">
+              {filteredCompanies.length}
+            </div>
+            <div className="text-[0.8rem] text-[#8be7dc]">
+              {filteredCompanies.length === companies.length
+                ? "Showing all companies"
+                : "Based on active filters"}
+            </div>
+          </article>
+        </section>
+
+        <section className="panel controls-panel relative z-80">
+          <div className="grid grid-cols-[minmax(0,2fr)_minmax(0,1fr)] items-end gap-3 max-[560px]:grid-cols-1">
+            <label>
+              <span className="mb-2 block font-['Space_Mono',monospace] text-[0.77rem] uppercase tracking-[0.06em] text-[#87a1d5]">
                 Search
               </span>
-              <input
-                type="search"
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Search by company, scrip, or sector"
-                className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm outline-none transition placeholder:text-slate-500 focus:border-amber-400/60 focus:ring-2 focus:ring-amber-400/20"
-              />
+              <div className="input-wrap">
+                <FiSearch />
+                <input
+                  type="search"
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  placeholder="Search by company name, scrip, or sector"
+                  className="market-input"
+                />
+              </div>
             </label>
 
-            <div ref={sectorRef} className="relative">
-              <span className="mb-2 block text-sm font-medium text-slate-300">
-                Sector
+            <div ref={sectorRef} className="dropdown-wrap">
+              <span className="mb-2 block font:['Space_Mono',monospace] text-[0.77rem] uppercase tracking-[0.06em] text-[#87a1d5]">
+                Sector Filter
               </span>
               <button
                 type="button"
                 aria-haspopup="listbox"
                 aria-expanded={sectorOpen}
                 onClick={() => setSectorOpen((v) => !v)}
-                className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-4 py-3 text-left text-sm text-slate-200 outline-none focus:border-amber-400/60 focus:ring-2 focus:ring-amber-400/20"
+                className="market-select-btn z-10"
               >
                 <span>{selectedSector}</span>
-                <span className="float-right text-slate-300">▾</span>
+                <FiChevronDown />
               </button>
 
               {sectorOpen && (
-                <ul
-                  role="listbox"
-                  tabIndex={-1}
-                  className="absolute right-0 left-0 z-50 mt-2 max-h-60 overflow-auto rounded-lg border border-white/10 bg-slate-900/80 p-1 shadow-lg"
-                >
+                <ul role="listbox" tabIndex={-1} className="dropdown-menu z-90">
                   {sectors.map((s) => (
                     <li
                       key={s}
@@ -127,7 +192,7 @@ function Home() {
                           setSectorOpen(false);
                         }
                       }}
-                      className={`cursor-pointer rounded-md px-3 py-3 text-sm text-slate-200 hover:bg-slate-800 ${selectedSector === s ? "bg-slate-800 font-semibold" : ""}`}
+                      className={`dropdown-item ${selectedSector === s ? "selected" : ""}`}
                     >
                       {s}
                     </li>
@@ -135,56 +200,75 @@ function Home() {
                 </ul>
               )}
             </div>
-
-            <p className="mt-2 text-sm text-slate-400 sm:mt-0">
-              {filteredCompanies.length} result
-              {filteredCompanies.length === 1 ? "" : "s"} found
-            </p>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="min-w-full border-separate border-spacing-y-2 text-left">
+          <p className="mt-2 text-[0.82rem] text-[#91a8d7]">
+            Showing {filteredCompanies.length} result
+            {filteredCompanies.length === 1 ? "" : "s"}
+          </p>
+        </section>
+
+        <section className="panel table-panel relative z-10">
+          <div className="table-wrap">
+            <table className="market-table text-left">
               <thead>
-                <tr className="text-xs uppercase tracking-[0.18em] text-slate-400">
-                  <th className="px-4 py-2 font-medium">Sn</th>
-                  <th className="px-4 py-2 font-medium">Company Scrip</th>
-                  <th className="px-4 py-2 font-medium">Company Name</th>
-                  <th className="px-4 py-2 font-medium">Sector</th>
+                <tr>
+                  <th>SN</th>
+                  <th>Company Scrip</th>
+                  <th>Company Name</th>
+                  <th>Sector</th>
+                  <th>
+                    <FiBarChart2 className="inline" /> Actions
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {filteredCompanies.length > 0 ? (
                   filteredCompanies.map((company, index) => (
-                    <tr
-                      key={company.id}
-                      className="rounded-xl border border-white/10 bg-slate-900/70 text-sm text-slate-100 shadow-sm shadow-black/10"
-                    >
-                      <td className="px-4 py-4 font-medium text-slate-300">
-                        {index + 1}
-                      </td>
-                      <td className="px-4 py-4 font-semibold tracking-wide text-amber-300">
+                    <tr key={company.id}>
+                      <td>{index + 1}</td>
+                      <td>
                         <button
                           onClick={() =>
                             navigate(`/financial/${company.symbol}`)
                           }
-                          className="cursor-pointer transition hover:text-amber-200 hover:underline"
+                          className="symbol-button"
                         >
                           {company.symbol}
                         </button>
                       </td>
-                      <td className="px-4 py-4">{company.name}</td>
-                      <td className="px-4 py-4 text-slate-300">
-                        {company.sector}
+                      <td>{company.name}</td>
+                      <td>
+                        <span className="sector-pill">{company.sector}</span>
+                      </td>
+                      <td>
+                        <div className="flex flex-wrap gap-2">
+                          <button
+                            onClick={() =>
+                              navigate(`/financial/${company.symbol}`)
+                            }
+                            className="btn-secondary"
+                          >
+                            <FiBarChart2 /> Financial
+                          </button>
+                          <button
+                            onClick={() =>
+                              navigate(`/comparison/${company.symbol}`)
+                            }
+                            className="mini-action"
+                          >
+                            <FiGitMerge /> Compare
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   ))
                 ) : (
                   <tr>
-                    <td
-                      colSpan={4}
-                      className="px-4 py-10 text-center text-sm text-slate-400"
-                    >
-                      No companies match this search.
+                    <td colSpan={5}>
+                      <div className="empty-state">
+                        No companies matched your current filters.
+                      </div>
                     </td>
                   </tr>
                 )}
@@ -198,3 +282,4 @@ function Home() {
 }
 
 export default Home;
+

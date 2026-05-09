@@ -86,9 +86,12 @@ file_path = os.path.join(parent_dir, "save_data", "companies2.json")
 with open(file_path, "r") as f:
     scrips = json.load(f)
 
-scrips10 = scrips[9:19]
+scrips10 = scrips[19:]
 async def main():
     for scrip in scrips10:
+        if str(scrip.get("symbol", "")).lower() == "rsml":
+            print("Skipping rsml")
+            continue
         await process_scrip(scrip)
         await asyncio.sleep(random.uniform(3, 5)) 
 

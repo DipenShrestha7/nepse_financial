@@ -1,0 +1,16 @@
+@media (max-width: 560px) {
+  .market-shell {
+    width: min(100% - 1rem, 1240px);
+  }
+
+  .controls-panel,
+  .table-panel,
+  .info-note {
+    padding: 0.85rem;
+  }
+
+  .market-table,
+  .financial-table {
+    min-width: 720px;
+  }
+}

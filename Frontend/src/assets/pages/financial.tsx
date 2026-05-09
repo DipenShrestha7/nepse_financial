@@ -1,5 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import {
+  FiActivity,
+  FiAlertTriangle,
+  FiArrowLeft,
+  FiBarChart2,
+  FiClock,
+  FiInfo,
+  FiLayers,
+} from "react-icons/fi";
 
 type FinancialMetric = {
   metricName: string;
@@ -7,13 +16,13 @@ type FinancialMetric = {
 };
 
 function Financial() {
-  const { scrip } = useParams<{ scrip: string }>();
+  let { scrip } = useParams<{ scrip: string }>();
   const navigate = useNavigate();
   const [metrics, setMetrics] = useState<FinancialMetric[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [quarters, setQuarters] = useState<string[]>([]);
-
+  scrip = scrip?.toUpperCase() || "";
   useEffect(() => {
     const fetchFinancialData = async () => {
       try {
@@ -35,7 +44,6 @@ function Financial() {
         }
 
         const data = await response.json();
-        console.log("Fetched financial data:", data);
         if (!data || data.length === 0) {
           setError("Data not available");
           setMetrics([]);
@@ -82,62 +90,99 @@ function Financial() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-slate-950 text-slate-100">
-        <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-6 sm:px-6 lg:px-8">
-          <div className="text-center text-slate-300">Loading...</div>
+      <main className="market-page">
+        <div className="market-shell">
+          <div className="loading-state panel">Loading financial data...</div>
         </div>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100">
-      <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-6 sm:px-6 lg:px-8">
-        {/* Header Section */}
-        <header className="mb-5 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 shadow-lg shadow-black/20 backdrop-blur">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                Financial Metrics
-              </h1>
-              <p className="mt-1 text-sm text-slate-300">
-                Scrip:{" "}
-                <span className="font-semibold text-amber-300">{scrip}</span>
-              </p>
-            </div>
+    <main className="market-page">
+      <div className="market-shell">
+        <header className="panel flex flex-wrap items-start justify-between gap-4 px-5 py-5 max-[560px]:px-3.5 max-[560px]:py-3.5">
+          <div>
+            <p className="mb-2 inline-flex items-center gap-2 font:['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.11em] text-[#81efdf]">
+              <FiBarChart2 /> Financial Metrics
+            </p>
+            <h1 className="m-0 text-[clamp(1.45rem,2.2vw,2rem)] font-bold tracking-[-0.015em] max-[560px]:text-[1.34rem]">
+              Financial Data Dashboard
+            </h1>
+            <p className="mt-1.5 text-[0.92rem] text-[#9fb0d4]">
+              Scrip:{" "}
+              <span className="font-semibold text-cyan-300">{scrip}</span>
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2.5">
             <button
-              onClick={() => navigate("/")}
-              className="rounded-xl border border-white/10 bg-slate-900/70 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-amber-400/60 hover:bg-slate-900/90 hover:text-amber-300 focus:border-amber-400/60 focus:ring-2 focus:ring-amber-400/20"
+              onClick={() => navigate("/company")}
+              className="btn-secondary"
             >
-              ← Back to Home
+              <FiArrowLeft /> Back to Directory
             </button>
           </div>
         </header>
 
-        {/* Data Section */}
-        <section className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg shadow-black/20 backdrop-blur sm:p-5">
+        <section className="grid grid-cols-3 gap-4 max-[560px]:grid-cols-1">
+          <article className="panel kpi-card">
+            <div className="flex items-center gap-2 font:['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.06em] text-[#9fb0d4]">
+              <FiLayers /> Total Metrics
+            </div>
+            <div className="text-[clamp(1.3rem,2.4vw,1.8rem)] font-bold leading-tight">
+              {metrics.length}
+            </div>
+            <div className="text-[0.8rem] text-[#8be7dc]">
+              Rows in this financial statement
+            </div>
+          </article>
+
+          <article className="panel kpi-card">
+            <div className="flex items-center gap-2 font:['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.06em] text-[#9fb0d4]">
+              <FiClock /> Total Quarters
+            </div>
+            <div className="text-[clamp(1.3rem,2.4vw,1.8rem)] font-bold leading-tight">
+              {quarters.length}
+            </div>
+            <div className="text-[0.8rem] text-[#8be7dc]">
+              Chronological reporting periods
+            </div>
+          </article>
+
+          <article className="panel kpi-card">
+            <div className="flex items-center gap-2 font:['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.06em] text-[#9fb0d4]">
+              <FiActivity /> Status
+            </div>
+            <div className="text-[clamp(1.3rem,2.4vw,1.8rem)] font-bold leading-tight">
+              {error ? "Data Missing" : "Ready"}
+            </div>
+            <div
+              className={`text-[0.8rem] ${error ? "text-[#ff9ca5]" : "text-[#8be7dc]"}`}
+            >
+              {error ? "Review selected scrip" : "Market fundamentals loaded"}
+            </div>
+          </article>
+        </section>
+
+        <section className="panel table-panel">
           {error ? (
-            <div className="flex items-center justify-center rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-10">
-              <div className="text-center">
-                <p className="text-lg font-medium text-red-400">{error}</p>
-                <p className="mt-2 text-sm text-red-300/80">
-                  No financial data is available for this scrip yet.
-                </p>
-              </div>
+            <div className="empty-state danger">
+              <p className="flex items-center justify-center gap-2 text-base font-semibold">
+                <FiAlertTriangle /> {error}
+              </p>
+              <p className="mt-2 text-sm">
+                No financial data is available for this scrip yet.
+              </p>
             </div>
           ) : metrics.length > 0 ? (
-            <div className="overflow-x-auto">
-              <table className="min-w-full border-separate border-spacing-y-1 text-left">
+            <div className="table-wrap">
+              <table className="financial-table text-left">
                 <thead>
-                  <tr className="text-xs uppercase tracking-[0.18em] text-slate-400">
-                    <th className="sticky left-0 z-10 bg-slate-950 px-4 py-3 font-medium">
-                      Particular
-                    </th>
+                  <tr>
+                    <th className="financial-first-col">Particular</th>
                     {quarters.map((quarter) => (
-                      <th
-                        key={quarter}
-                        className="px-4 py-3 font-medium text-center"
-                      >
+                      <th key={quarter} className="text-center">
                         {quarter}
                       </th>
                     ))}
@@ -147,17 +192,15 @@ function Financial() {
                   {metrics.map((metric, index) => (
                     <tr
                       key={metric.metricName}
-                      className={`${
-                        index % 2 === 0 ? "bg-slate-900/40" : "bg-slate-900/20"
-                      } border border-white/5 text-sm text-slate-100 transition hover:bg-slate-900/60`}
+                      className={`financial-row ${index % 2 === 0 ? "even" : "odd"}`}
                     >
-                      <td className="sticky left-0 z-10 bg-slate-900/40 px-4 py-4 font-medium text-slate-300 hover:bg-slate-900/60">
+                      <td className="financial-first-col">
                         {metric.metricName}
                       </td>
                       {quarters.map((quarter) => (
                         <td
                           key={`${metric.metricName}-${quarter}`}
-                          className="px-4 py-4 text-right font-semibold text-amber-300"
+                          className="value-cell"
                         >
                           {metric[quarter] !== undefined
                             ? metric[quarter]
@@ -170,22 +213,16 @@ function Financial() {
               </table>
             </div>
           ) : (
-            <div className="flex items-center justify-center rounded-xl border border-slate-700/50 bg-slate-900/30 px-4 py-10">
-              <p className="text-center text-sm text-slate-400">
-                No metrics found for this scrip
-              </p>
-            </div>
+            <div className="empty-state">No metrics found for this scrip.</div>
           )}
         </section>
 
-        {/* Info Section */}
-        <section className="mt-5 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 shadow-lg shadow-black/20 backdrop-blur">
-          <h3 className="text-sm font-semibold text-slate-300">Information</h3>
-          <p className="mt-2 text-sm leading-relaxed text-slate-400">
-            This page displays financial metrics for the selected scrip. The
-            table shows various financial ratios and indicators across different
-            quarters. If a metric value is not available, it will be displayed
-            as "—".
+        <section className="panel info-note">
+          <FiInfo className="mt-1 shrink-0" />
+          <p>
+            This dashboard presents financial metrics for the selected scrip.
+            Values are grouped by quarter, and unavailable values appear as
+            placeholders.
           </p>
         </section>
       </div>
@@ -194,3 +231,4 @@ function Financial() {
 }
 
 export default Financial;
+

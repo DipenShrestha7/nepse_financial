@@ -1,0 +1,73 @@
+:root {
+  --bg-base: #060b17;
+  --bg-elev-1: rgba(11, 19, 36, 0.82);
+  --bg-elev-2: rgba(13, 23, 42, 0.92);
+  --text-main: #e8eefc;
+  --text-muted: #9fb0d4;
+  --line-soft: rgba(120, 151, 209, 0.26);
+  --teal: #19d3c5;
+  --cyan: #32b7ff;
+  --green: #2ad882;
+  --red: #ff6873;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Sora", "Segoe UI", sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(
+      circle at 88% 6%,
+      rgba(37, 196, 255, 0.16),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 8% 12%,
+      rgba(37, 255, 188, 0.14),
+      transparent 26%
+    ),
+    linear-gradient(152deg, #040812 0%, #070e1d 45%, #050a15 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.market-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 1.25rem 0;
+  overflow: hidden;
+}
+
+.market-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(34, 211, 238, 0.08),
+      transparent 32%
+    ),
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(99, 146, 217, 0.04) 50%,
+      transparent 100%
+    );
+  pointer-events: none;
+}
+
+.market-shell {
+  position: relative;
+  z-index: 1;
+  width: min(1240px, calc(100% - 2rem));
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}

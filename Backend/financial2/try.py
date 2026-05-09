@@ -8,4 +8,4 @@ file_path = os.path.join(parent_dir, "save_data", "companies2.json")
 with open(file_path, "r") as f:
     scrips = json.load(f)
 
-print(scrips[9:19])
+print(len(scrips))
