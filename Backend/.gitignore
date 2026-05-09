@@ -3,3 +3,5 @@ node_modules/
 insert_format_data/
 financial_data/
 .vscode/
+.browser_profile_nepse/
+insert_format_data/
