@@ -12,6 +12,85 @@
   backdrop-filter: blur(8px);
 }
 
+.site-header,
+.page-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.site-header {
+  margin-bottom: 1rem;
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.site-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #77f3e2 0%, #28b8ff 100%);
+  color: #06111d;
+  display: grid;
+  place-items: center;
+  font-size: 0.95rem;
+  font-weight: 800;
+  flex: 0 0 auto;
+}
+
+.site-brand-text {
+  min-width: 0;
+}
+
+.site-brand-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.site-nav,
+.page-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.site-nav .btn-ghost {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-main);
+  padding: 0.45rem 0.7rem;
+  border-radius: 0.7rem;
+}
+
+.site-nav .btn-ghost.active,
+.site-nav .btn-ghost[aria-current="page"] {
+  background: linear-gradient(
+    90deg,
+    rgba(39, 162, 156, 0.12),
+    rgba(56, 125, 255, 0.08)
+  );
+  border-color: rgba(77, 219, 198, 0.34);
+  color: #dffbf7;
+  box-shadow: 0 6px 18px rgba(18, 138, 126, 0.06) inset;
+}
+
+.site-nav .btn-ghost:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(45, 208, 182, 0.14);
+}
+
 .btn-primary,
 .btn-secondary,
 .mini-action {
@@ -581,6 +660,34 @@
   color: #c6d7fa;
 }
 
+.chat-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.chat-list {
+  display: grid;
+  gap: 0.35rem;
+  min-height: 18rem;
+  max-height: min(60vh, 28rem);
+  padding-right: 0.25rem;
+}
+
+.chat-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-list::-webkit-scrollbar-thumb {
+  background: rgba(90, 129, 194, 0.56);
+  border-radius: 999px;
+}
+
+.chat-composer {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
 .empty-state.danger {
   border-color: rgba(248, 95, 112, 0.45);
   background: rgba(57, 18, 28, 0.42);
@@ -595,5 +702,104 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 920px) {
+  .site-header,
+  .page-hero,
+  .comparison-chart-header {
+    align-items: flex-start;
+  }
+
+  .site-header,
+  .page-hero {
+    flex-direction: column;
+  }
+
+  .site-nav,
+  .page-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .comparison-metric-picker {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .site-header,
+  .page-hero,
+  .controls-panel,
+  .table-panel,
+  .info-note,
+  .comparison-summary-panel,
+  .comparison-chart-panel,
+  .comparison-table-panel,
+  .chat-panel {
+    padding: 0.9rem;
+  }
+
+  .site-nav,
+  .page-actions,
+  .chat-composer {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .site-nav button,
+  .page-actions button,
+  .chat-composer button,
+  .chat-composer input {
+    width: 100%;
+  }
+
+  .comparison-section-title {
+    font-size: 1.05rem;
+  }
+
+  .comparison-chart-legend {
+    gap: 0.55rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .market-shell {
+    width: min(100% - 0.9rem, 1240px);
+    gap: 0.8rem;
+  }
+
+  .market-page {
+    padding: 0.65rem 0;
+  }
+
+  .site-brand-name {
+    font-size: 0.98rem;
+  }
+
+  .site-logo {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .market-table,
+  .financial-table,
+  .comparison-table {
+    min-width: 720px;
+  }
+
+  .comparison-summary-grid,
+  .comparison-notes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-chart-svg {
+    min-height: 250px;
+  }
+
+  .chat-list {
+    min-height: 14rem;
   }
 }

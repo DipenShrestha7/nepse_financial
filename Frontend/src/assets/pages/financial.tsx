@@ -6,7 +6,6 @@ import {
   FiArrowLeft,
   FiBarChart2,
   FiClock,
-  FiGitMerge,
   FiInfo,
   FiLayers,
 } from "react-icons/fi";
@@ -102,10 +101,10 @@ function Financial() {
   return (
     <main className="market-page">
       <div className="market-shell">
-        <header className="panel flex flex-wrap items-start justify-between gap-4 px-5 py-5 max-[560px]:px-3.5 max-[560px]:py-3.5">
-          <div>
-            <p className="mb-2 inline-flex items-center gap-2 font:['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.11em] text-[#81efdf]"></p>
-            <h1 className="m-0 text-[clamp(1.45rem,2.2vw,2rem)] font-bold tracking-[-0.015em] max-[560px]:text-[1.34rem]">
+        <header className="panel page-hero flex flex-wrap items-start justify-between gap-4 px-5 py-5 max-[560px]:px-3.5 max-[560px]:py-3.5">
+          <div className="page-hero-copy">
+            <h1 className="m-0 flex items-center gap-2 text-[clamp(1.45rem,2.2vw,2rem)] font-bold tracking-[-0.015em] max-[560px]:text-[1.34rem]">
+              <FiBarChart2 className="shrink-0 text-white text-[1.15em]" />
               Financial Data Dashboard
             </h1>
             <p className="mt-1.5 text-[0.92rem] text-[#9fb0d4]">
@@ -114,18 +113,12 @@ function Financial() {
             </p>
           </div>
 
-          <div className="flex flex-wrap flex-col items-center gap-5">
+          <div className="page-actions">
             <button
               onClick={() => navigate("/company")}
               className="btn-secondary"
             >
               <FiArrowLeft /> Back to Directory
-            </button>
-            <button
-              onClick={() => navigate("/comparison")}
-              className="btn-primary"
-            >
-              <FiGitMerge /> Compare Companies
             </button>
           </div>
         </header>

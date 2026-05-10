@@ -4,12 +4,12 @@ import {
   FiBarChart2,
   FiBriefcase,
   FiChevronDown,
-  FiGitMerge,
   FiGrid,
   FiLayers,
   FiSearch,
   FiTrendingUp,
 } from "react-icons/fi";
+import Header from "../../components/Header";
 
 type Company = {
   id: number;
@@ -78,28 +78,18 @@ function Home() {
   return (
     <main className="market-page">
       <div className="market-shell">
-        <header className="panel flex flex-wrap items-start justify-between gap-4 px-5 py-5 max-[560px]:px-3.5 max-[560px]:py-3.5">
+        <Header />
+        <section className="panel page-hero mb-4 px-5 py-4">
           <div>
-            <p className="mb-2 inline-flex items-center gap-2 font:['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.11em] text-[#81efdf]">
-              <FiGrid /> Market Directory
-            </p>
-            <h1 className="m-0 text-[clamp(1.45rem,2.2vw,2rem)] font-bold tracking-[-0.015em] max-[560px]:text-[1.34rem]">
-              NEPSE Company Explorer
+            <h1 className="m-0 text-[clamp(1.45rem,2.2vw,2rem)] font-bold tracking-[-0.015em] max-[560px]:text-[1.34rem] flex flex-row items-center">
+              <FiGrid className="mr-2 mb-1" />
+              Company List
             </h1>
             <p className="mt-1.5 text-[0.92rem] text-[#9fb0d4]">
               Search, filter, and jump into financial insights with one click.
             </p>
           </div>
-
-          <div className="flex flex-wrap items-center gap-2.5">
-            <button
-              onClick={() => navigate("/comparison")}
-              className="btn-primary"
-            >
-              <FiGitMerge /> Compare Companies
-            </button>
-          </div>
-        </header>
+        </section>
 
         <section className="grid grid-cols-3 gap-4 max-[560px]:grid-cols-1">
           <article className="panel kpi-card">

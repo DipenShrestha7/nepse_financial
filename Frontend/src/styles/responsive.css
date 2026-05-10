@@ -1,16 +1,52 @@
 @media (max-width: 560px) {
   .market-shell {
-    width: min(100% - 1rem, 1240px);
+    width: min(100% - 0.9rem, 1240px);
+  }
+
+  .site-header,
+  .page-hero,
+  .comparison-chart-header {
+    gap: 0.75rem;
+  }
+
+  .site-nav,
+  .page-actions,
+  .chat-composer {
+    gap: 0.5rem;
   }
 
   .controls-panel,
   .table-panel,
-  .info-note {
+  .info-note,
+  .comparison-summary-panel,
+  .comparison-chart-panel,
+  .comparison-table-panel,
+  .chat-panel {
     padding: 0.85rem;
   }
 
   .market-table,
   .financial-table {
     min-width: 720px;
+  }
+
+  .comparison-table {
+    min-width: 960px;
+  }
+
+  .site-nav button,
+  .page-actions button,
+  .chat-composer button,
+  .chat-composer input {
+    width: 100%;
+  }
+
+  .comparison-chart-svg {
+    min-height: 220px;
+  }
+
+  .comparison-summary-grid,
+  .comparison-notes-grid {
+    grid-template-columns: 1fr;
   }
 }

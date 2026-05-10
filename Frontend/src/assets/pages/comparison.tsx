@@ -1,10 +1,11 @@
 import { Fragment, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import Header from "../../components/Header";
 import {
   FiAlertTriangle,
-  FiArrowLeft,
   FiBarChart2,
   FiGitMerge,
+  FiPieChart,
   FiTrendingUp,
 } from "react-icons/fi";
 
@@ -374,7 +375,6 @@ function ComparisonChart({
 
 function Comparison() {
   const { scrip } = useParams<{ scrip: string }>();
-  const navigate = useNavigate();
   const [companies, setCompanies] = useState<Company[]>([]);
   const [selectedCompany1, setSelectedCompany1] = useState("");
   const [selectedCompany2, setSelectedCompany2] = useState("");
@@ -587,9 +587,11 @@ function Comparison() {
   return (
     <main className="market-page">
       <div className="market-shell">
-        <header className="panel flex flex-wrap items-start justify-between gap-4 px-5 py-5 max-[560px]:px-3.5 max-[560px]:py-3.5">
-          <div>
-            <h1 className="m-0 text-[clamp(1.45rem,2.2vw,2rem)] font-bold tracking-[-0.015em] max-[560px]:text-[1.34rem]">
+        <Header />
+        <header className="panel page-hero flex flex-wrap items-start justify-between gap-4 px-5 py-5 max-[560px]:px-3.5 max-[560px]:py-3.5">
+          <div className="page-hero-copy">
+            <h1 className="m-0 flex items-center gap-2 text-[clamp(1.45rem,2.2vw,2rem)] font-bold tracking-[-0.015em] max-[560px]:text-[1.34rem]">
+              <FiPieChart className="shrink-0 text-white text-[1.15em]" />
               Financial Comparison
             </h1>
             <p className="mt-1.5 text-[0.92rem] text-[#9fb0d4]">
@@ -597,14 +599,7 @@ function Comparison() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2.5">
-            <button
-              onClick={() => navigate("/company")}
-              className="btn-secondary"
-            >
-              <FiArrowLeft /> Back to Directory
-            </button>
-          </div>
+          <div className="page-actions"></div>
         </header>
 
         <section className="grid grid-cols-2 gap-4 max-[560px]:grid-cols-1">
