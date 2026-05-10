@@ -128,6 +128,68 @@
   box-shadow: 0 0 0 3px rgba(45, 208, 182, 0.18);
 }
 
+.company-select {
+  width: 100%;
+  padding: 0.35rem 2rem 0.35rem 0;
+  border: 0;
+  background: transparent;
+  color: #eaf2ff;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  outline: none;
+  appearance: auto;
+}
+
+.company-select option {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #cfe0ff;
+  background: #0d1728;
+}
+
+.company-select option:checked,
+.company-select option:hover {
+  background: #1b335a;
+  color: #f4f8ff;
+}
+
+.compare-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 11rem;
+  padding: 0.68rem 1.2rem;
+  border: 1px solid rgba(129, 231, 219, 0.42);
+  border-radius: 0.92rem;
+  background: linear-gradient(
+    120deg,
+    rgba(17, 196, 174, 0.22),
+    rgba(38, 160, 255, 0.16)
+  );
+  color: #eaf2ff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.compare-btn-primary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(129, 231, 219, 0.72);
+  box-shadow: 0 12px 28px rgba(0, 141, 128, 0.2);
+}
+
+.compare-btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(45, 208, 182, 0.18);
+}
+
 .dropdown-wrap {
   position: relative;
 }
@@ -258,10 +320,13 @@
 .financial-first-col {
   position: sticky;
   left: 0;
-  z-index: 2;
-  background: rgba(9, 16, 32, 0.96);
+  z-index: 3;
+  background: #091020;
   font-weight: 600;
   color: #c8dafd;
+  background-image: none;
+  backdrop-filter: none;
+  box-shadow: inset -1px 0 0 rgba(98, 130, 188, 0.12);
 }
 
 .financial-row.even {
@@ -276,6 +341,234 @@
   text-align: right;
   font-family: "Space Mono", monospace;
   color: #92f3e5;
+}
+
+/* Subtle vertical separators between financial columns (except the sticky first column) */
+.financial-table th:not(.financial-first-col),
+.financial-table td:not(.financial-first-col) {
+  border-right: 1px solid rgba(98, 130, 188, 0.06);
+}
+
+/* Don't show right border on the last column for a clean edge */
+.financial-table th:last-child,
+.financial-table td:last-child {
+  border-right: 0;
+}
+
+/* Ensure headers for data columns align to the right to match numeric values */
+.financial-table thead th:not(.financial-first-col) {
+  text-align: right;
+}
+
+.comparison-results-grid {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.comparison-summary-panel,
+.comparison-chart-panel,
+.comparison-table-panel {
+  padding: 1rem;
+  min-width: 0;
+}
+
+.comparison-section-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: "Space Mono", monospace;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #88a3d8;
+  margin-bottom: 0.85rem;
+}
+
+.comparison-subtitle {
+  margin: -0.35rem 0 0.9rem;
+  color: #9fb0d4;
+  font-size: 0.88rem;
+}
+
+.comparison-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.85rem;
+}
+
+.comparison-summary-card {
+  border: 1px solid rgba(114, 149, 213, 0.22);
+  border-radius: 0.92rem;
+  background: rgba(8, 16, 33, 0.7);
+  padding: 0.9rem;
+}
+
+.comparison-summary-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8ca9dd;
+}
+
+.comparison-summary-value {
+  margin-top: 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #eaf2ff;
+}
+
+.comparison-summary-note {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  color: #9fb0d4;
+}
+
+.comparison-chart-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.9rem;
+  align-items: end;
+  margin-bottom: 0.75rem;
+}
+
+.comparison-metric-picker {
+  display: grid;
+  gap: 0.3rem;
+  min-width: 220px;
+  font-size: 0.78rem;
+  color: #9fb0d4;
+}
+
+.comparison-metric-select {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(122, 156, 214, 0.34);
+  background: rgba(8, 16, 33, 0.86);
+  color: #eaf2ff;
+  outline: none;
+}
+
+.comparison-chart-wrap {
+  border: 1px solid rgba(107, 138, 191, 0.18);
+  border-radius: 0.9rem;
+  background: rgba(8, 16, 33, 0.7);
+  overflow: hidden;
+  width: 100%;
+  min-width: 0;
+}
+
+.comparison-chart-svg {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.comparison-grid-line {
+  stroke: rgba(129, 160, 224, 0.1);
+  stroke-width: 1;
+}
+
+.comparison-axis-line {
+  stroke: rgba(129, 160, 224, 0.28);
+  stroke-width: 1.2;
+}
+
+.comparison-axis-label,
+.comparison-quarter-label {
+  fill: #88a3d8;
+  font-size: 11px;
+  font-family: "Space Mono", monospace;
+}
+
+.comparison-quarter-label {
+  font-size: 10.5px;
+}
+
+.comparison-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  padding: 0.85rem 0.9rem 0.95rem;
+}
+
+.comparison-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: #d8e5ff;
+}
+
+.comparison-legend-swatch {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04);
+}
+
+.comparison-chart-note {
+  margin-top: 0.7rem;
+  color: #9fb0d4;
+  font-size: 0.85rem;
+}
+
+.comparison-table {
+  min-width: 1240px;
+}
+
+.comparison-quarter-group,
+.comparison-company-head {
+  text-align: center;
+}
+
+.comparison-quarter-group {
+  border-right: 1px solid rgba(122, 156, 214, 0.28);
+}
+
+.comparison-quarter-group:last-child {
+  border-right: 0;
+}
+
+.comparison-table thead tr:nth-child(2) th:nth-child(2n) {
+  border-right: 1px solid rgba(122, 156, 214, 0.2);
+}
+
+.comparison-table tbody td:nth-child(2n + 1):not(.financial-first-col) {
+  border-right: 1px solid rgba(122, 156, 214, 0.18);
+}
+
+.comparison-company-head {
+  font-size: 0.74rem;
+  color: #b9c9e8;
+}
+
+.comparison-a-cell {
+  color: #7ce7df;
+}
+
+.comparison-b-cell {
+  color: #a8c7ff;
+}
+
+.comparison-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+
+.comparison-note-box {
+  border: 1px solid rgba(114, 149, 213, 0.22);
+  border-radius: 0.92rem;
+  background: rgba(8, 16, 33, 0.7);
+  padding: 0.9rem;
+  color: #c6d7fa;
+  font-size: 0.86rem;
+  line-height: 1.5;
 }
 
 .empty-state,

@@ -6,6 +6,7 @@ import {
   FiArrowLeft,
   FiBarChart2,
   FiClock,
+  FiGitMerge,
   FiInfo,
   FiLayers,
 } from "react-icons/fi";
@@ -115,12 +116,18 @@ function Financial() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2.5">
+          <div className="flex flex-wrap flex-col items-center gap-5">
             <button
               onClick={() => navigate("/company")}
               className="btn-secondary"
             >
               <FiArrowLeft /> Back to Directory
+            </button>
+            <button
+              onClick={() => navigate("/comparison")}
+              className="btn-primary"
+            >
+              <FiGitMerge /> Compare Companies
             </button>
           </div>
         </header>
@@ -182,7 +189,7 @@ function Financial() {
                   <tr>
                     <th className="financial-first-col">Particular</th>
                     {quarters.map((quarter) => (
-                      <th key={quarter} className="text-center">
+                      <th key={quarter} className="text-right">
                         {quarter}
                       </th>
                     ))}
@@ -217,8 +224,8 @@ function Financial() {
           )}
         </section>
 
-        <section className="panel info-note">
-          <FiInfo className="mt-1 shrink-0" />
+        <section className="flex gap-3 panel info-note justify-center items-center">
+          <FiInfo className="text-xl -mt-0.5 shrink-0" />
           <p>
             This dashboard presents financial metrics for the selected scrip.
             Values are grouped by quarter, and unavailable values appear as
@@ -231,4 +238,3 @@ function Financial() {
 }
 
 export default Financial;
-

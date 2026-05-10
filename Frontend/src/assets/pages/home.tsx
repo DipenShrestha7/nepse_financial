@@ -80,7 +80,7 @@ function Home() {
       <div className="market-shell">
         <header className="panel flex flex-wrap items-start justify-between gap-4 px-5 py-5 max-[560px]:px-3.5 max-[560px]:py-3.5">
           <div>
-            <p className="mb-2 inline-flex items-center gap-2 font-['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.11em] text-[#81efdf]">
+            <p className="mb-2 inline-flex items-center gap-2 font:['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.11em] text-[#81efdf]">
               <FiGrid /> Market Directory
             </p>
             <h1 className="m-0 text-[clamp(1.45rem,2.2vw,2rem)] font-bold tracking-[-0.015em] max-[560px]:text-[1.34rem]">
@@ -103,7 +103,7 @@ function Home() {
 
         <section className="grid grid-cols-3 gap-4 max-[560px]:grid-cols-1">
           <article className="panel kpi-card">
-            <div className="flex items-center gap-2 font-['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.06em] text-[#9fb0d4]">
+            <div className="flex items-center gap-2 font:['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.06em] text-[#9fb0d4]">
               <FiBriefcase /> Listed Companies
             </div>
             <div className="text-[clamp(1.3rem,2.4vw,1.8rem)] font-bold leading-tight">
@@ -115,7 +115,7 @@ function Home() {
           </article>
 
           <article className="panel kpi-card">
-            <div className="flex items-center gap-2 font-['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.06em] text-[#9fb0d4]">
+            <div className="flex items-center gap-2 font:['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.06em] text-[#9fb0d4]">
               <FiLayers /> Sectors
             </div>
             <div className="text-[clamp(1.3rem,2.4vw,1.8rem)] font-bold leading-tight">
@@ -127,7 +127,7 @@ function Home() {
           </article>
 
           <article className="panel kpi-card">
-            <div className="flex items-center gap-2 font-['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.06em] text-[#9fb0d4]">
+            <div className="flex items-center gap-2 font:['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.06em] text-[#9fb0d4]">
               <FiTrendingUp /> Filtered Results
             </div>
             <div className="text-[clamp(1.3rem,2.4vw,1.8rem)] font-bold leading-tight">
@@ -144,7 +144,7 @@ function Home() {
         <section className="panel controls-panel relative z-80">
           <div className="grid grid-cols-[minmax(0,2fr)_minmax(0,1fr)] items-end gap-3 max-[560px]:grid-cols-1">
             <label>
-              <span className="mb-2 block font-['Space_Mono',monospace] text-[0.77rem] uppercase tracking-[0.06em] text-[#87a1d5]">
+              <span className="mb-2 block font:['Space_Mono',monospace] text-[0.77rem] uppercase tracking-[0.06em] text-[#87a1d5]">
                 Search
               </span>
               <div className="input-wrap">
@@ -218,7 +218,7 @@ function Home() {
                   <th>Company Name</th>
                   <th>Sector</th>
                   <th>
-                    <FiBarChart2 className="inline" /> Actions
+                    <FiBarChart2 className="inline" /> Data
                   </th>
                 </tr>
               </thead>
@@ -251,14 +251,6 @@ function Home() {
                           >
                             <FiBarChart2 /> Financial
                           </button>
-                          <button
-                            onClick={() =>
-                              navigate(`/comparison/${company.symbol}`)
-                            }
-                            className="mini-action"
-                          >
-                            <FiGitMerge /> Compare
-                          </button>
                         </div>
                       </td>
                     </tr>
@@ -282,4 +274,3 @@ function Home() {
 }
 
 export default Home;
-
