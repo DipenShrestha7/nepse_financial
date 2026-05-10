@@ -589,9 +589,6 @@ function Comparison() {
       <div className="market-shell">
         <header className="panel flex flex-wrap items-start justify-between gap-4 px-5 py-5 max-[560px]:px-3.5 max-[560px]:py-3.5">
           <div>
-            <p className="mb-2 inline-flex items-center gap-2 font:['Space_Mono',monospace] text-[0.72rem] uppercase tracking-[0.11em] text-[#81efdf]">
-              <FiGitMerge /> Comparison View
-            </p>
             <h1 className="m-0 text-[clamp(1.45rem,2.2vw,2rem)] font-bold tracking-[-0.015em] max-[560px]:text-[1.34rem]">
               Financial Comparison
             </h1>
@@ -717,27 +714,25 @@ function Comparison() {
                   <div className="comparison-section-title">
                     <FiBarChart2 /> Trend Chart
                   </div>
-                  <p className="comparison-subtitle">
-                    The chart shows one readable metric across the matching
-                    quarters.
-                  </p>
                 </div>
 
                 <label className="comparison-metric-picker">
-                  <span>Graph metric</span>
-                  <select
-                    className="comparison-metric-select"
-                    value={selectedChartMetric}
-                    onChange={(event) =>
-                      setSelectedChartMetric(event.target.value)
-                    }
-                  >
-                    {comparisonResult.chartMetrics.map((metricName) => (
-                      <option key={metricName} value={metricName}>
-                        {metricName}
-                      </option>
-                    ))}
-                  </select>
+                  <div className="flex items-center gap-2 text-[#9fb0d4]">
+                    <span className="text-[1rem]">Metric</span>
+                    <select
+                      className="comparison-metric-select"
+                      value={selectedChartMetric}
+                      onChange={(event) =>
+                        setSelectedChartMetric(event.target.value)
+                      }
+                    >
+                      {comparisonResult.chartMetrics.map((metricName) => (
+                        <option key={metricName} value={metricName}>
+                          {metricName}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </label>
               </div>
 
@@ -747,21 +742,12 @@ function Comparison() {
                 dataset2={comparisonResult.dataset2}
                 metricName={selectedChartMetric}
               />
-
-              <p className="comparison-chart-note">
-                Only metrics that can be converted into numbers across every
-                matched quarter are shown here.
-              </p>
             </article>
 
             <article className="panel table-panel comparison-table-panel">
               <div className="comparison-section-title">
                 <FiGitMerge /> Side-by-Side Comparison
               </div>
-              <p className="comparison-subtitle">
-                Each quarter shows one value for each company.
-              </p>
-
               <div className="table-wrap">
                 <table className="financial-table comparison-table text-left">
                   <thead>
