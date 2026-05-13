@@ -49,4 +49,12 @@
   .comparison-notes-grid {
     grid-template-columns: 1fr;
   }
+
+  .auth-dialog {
+    padding: 0.8rem;
+  }
+
+  .auth-tabs {
+    grid-template-columns: 1fr;
+  }
 }

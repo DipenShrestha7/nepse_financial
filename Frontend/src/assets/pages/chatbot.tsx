@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
-import Header from "../../components/Header";
-import { FiMessageSquare, FiSend } from "react-icons/fi";
+import Header from "../components/Header";
+import { FiLock, FiMessageSquare, FiSend } from "react-icons/fi";
+import { getCurrentUser } from "../../utils/auth";
 
 type Message = {
   id: number;
@@ -9,6 +10,7 @@ type Message = {
 };
 
 export default function Chatbot() {
+  const [isLoggedIn, setIsLoggedIn] = useState(Boolean(getCurrentUser()));
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
@@ -22,6 +24,12 @@ export default function Chatbot() {
   useEffect(() => {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight });
   }, [messages]);
+
+  useEffect(() => {
+    const syncAuth = () => setIsLoggedIn(Boolean(getCurrentUser()));
+    window.addEventListener("auth-changed", syncAuth);
+    return () => window.removeEventListener("auth-changed", syncAuth);
+  }, []);
 
   const sendMessage = () => {
     if (!input.trim()) return;
@@ -65,37 +73,60 @@ export default function Chatbot() {
           <div className="page-actions" />
         </header>
 
-        <section className="panel chat-panel p-4">
-          <div ref={listRef} className="chat-list mb-4 max-h-80 overflow-auto">
-            {messages.map((m) => (
-              <div
-                key={m.id}
-                className={`mb-3 flex items-start ${m.from === "user" ? "justify-end" : "justify-start"}`}
-              >
+        {isLoggedIn ? (
+          <section className="panel chat-panel p-4">
+            <div
+              ref={listRef}
+              className="chat-list mb-4 max-h-80 overflow-auto"
+            >
+              {messages.map((m) => (
                 <div
-                  className={`inline-flex w-fit max-w-[70%] self-start rounded-md px-3 py-2 leading-snug ${m.from === "user" ? "bg-cyan-500 text-white" : "bg-white/5 text-slate-100"}`}
+                  key={m.id}
+                  className={`mb-3 flex items-start ${m.from === "user" ? "justify-end" : "justify-start"}`}
                 >
-                  {m.text}
+                  <div
+                    className={`inline-flex w-fit max-w-[70%] self-start rounded-md px-3 py-2 leading-snug ${m.from === "user" ? "bg-cyan-500 text-white" : "bg-white/5 text-slate-100"}`}
+                  >
+                    {m.text}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="chat-composer">
-            <input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") sendMessage();
-              }}
-              placeholder="Type your message..."
-              className="market-input flex-1"
-            />
-            <button onClick={sendMessage} className="btn-primary">
-              <FiSend />
+            <div className="chat-composer">
+              <input
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") sendMessage();
+                }}
+                placeholder="Type your message..."
+                className="market-input flex-1"
+              />
+              <button onClick={sendMessage} className="btn-primary">
+                <FiSend />
+              </button>
+            </div>
+          </section>
+        ) : (
+          <section className="panel chat-panel chat-gate">
+            <FiLock className="chat-gate-icon" />
+            <h3>Login Required For Chatbot</h3>
+            <p>
+              You can browse other pages without login. To use the chatbot,
+              please login or create an account first.
+            </p>
+            <button
+              type="button"
+              className="btn-primary"
+              onClick={() =>
+                window.dispatchEvent(new Event("open-auth-overlay"))
+              }
+            >
+              Open Login
             </button>
-          </div>
-        </section>
+          </section>
+        )}
       </div>
     </main>
   );

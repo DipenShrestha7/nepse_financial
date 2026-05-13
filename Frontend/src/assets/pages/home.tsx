@@ -9,7 +9,7 @@ import {
   FiSearch,
   FiTrendingUp,
 } from "react-icons/fi";
-import Header from "../../components/Header";
+import Header from "../components/Header";
 
 type Company = {
   id: number;

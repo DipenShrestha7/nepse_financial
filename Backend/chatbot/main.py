@@ -66,8 +66,6 @@ def main() -> None:
 
 	print("\nAnswer:\n")
 	print(result["answer"])
-	print("\nSummary:\n")
-	pprint(result["summary"])
 
 
 if __name__ == "__main__":
