@@ -5,3 +5,4 @@ financial_data/
 .vscode/
 .browser_profile_nepse/
 insert_format_data/
+.env

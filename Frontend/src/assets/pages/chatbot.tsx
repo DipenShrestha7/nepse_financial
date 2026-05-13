@@ -58,7 +58,7 @@ export default function Chatbot() {
               Chatbot
             </h1>
             <p className="mt-1.5 text-[0.92rem] text-[#9fb0d4]">
-              Ask about companies or financial data (demo frontend only).
+              Ask about different financial data of any NEPSE listed company.
             </p>
           </div>
 
