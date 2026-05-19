@@ -3,6 +3,9 @@ import Fastify from "fastify";
 import cors from "@fastify/cors";
 import companyRoutes from "./routes/companyRoute.js";
 import financialRoutes from "./routes/financialRoute.js";
+import usersRoutes from "./routes/usersRoute.js";
+import chatSessionRoutes from "./routes/chatSessionRoute.js";
+import chatMessageRoutes from "./routes/chatMessageRoute.js";
 import "dotenv/config";
 
 const fastify = Fastify({
@@ -29,6 +32,9 @@ const start = async () => {
     await sequelize.sync();
     fastify.register(companyRoutes);
     fastify.register(financialRoutes);
+    fastify.register(usersRoutes);
+    fastify.register(chatSessionRoutes);
+    fastify.register(chatMessageRoutes);
     await fastify.listen({ port: process.env.PORT || 8000 });
     console.log("Server is running on port " + (process.env.PORT || 8000));
   } catch (error) {

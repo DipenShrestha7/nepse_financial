@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FiMessageSquare, FiGitMerge, FiHome } from "react-icons/fi";
 import AuthOverlay from "./AuthOverlay";
-import { getCurrentUser, logoutUser } from "../../utils/auth";
+import LogoutConfirmationOverlay from "./LogoutConfirmationOverlay";
+import { getCurrentUser, logoutUser } from "../../utils/authApi";
 
 export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
   const [authOpen, setAuthOpen] = useState(false);
   const [username, setUsername] = useState<string | null>(null);
+  const [logoutConfirmOpen, setLogoutConfirmOpen] = useState(false);
 
   useEffect(() => {
     const syncUser = () => {
@@ -72,7 +74,7 @@ export default function Header() {
 
           {username ? (
             <button
-              onClick={logoutUser}
+              onClick={() => setLogoutConfirmOpen(true)}
               className="btn-secondary cursor-pointer"
               title={`Logged in as ${username}`}
             >
@@ -90,6 +92,16 @@ export default function Header() {
       </header>
 
       <AuthOverlay open={authOpen} onClose={() => setAuthOpen(false)} />
+      <LogoutConfirmationOverlay
+        open={logoutConfirmOpen}
+        username={username}
+        onConfirm={() => {
+          logoutUser();
+          setLogoutConfirmOpen(false);
+          navigate("/company");
+        }}
+        onCancel={() => setLogoutConfirmOpen(false)}
+      />
     </>
   );
 }

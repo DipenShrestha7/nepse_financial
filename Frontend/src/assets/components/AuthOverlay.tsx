@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { FiEye, FiEyeOff, FiLock, FiMail, FiUser, FiX } from "react-icons/fi";
-import { loginUser, signupUser } from "../../utils/auth";
+import { loginUser, signupUser } from "../../utils/authApi";
 
 type Mode = "login" | "signup";
 
@@ -15,6 +15,7 @@ export default function AuthOverlay({ open, onClose }: AuthOverlayProps) {
   const [mode, setMode] = useState<Mode>("login");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [userIdOrEmail, setUserIdOrEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -47,6 +48,7 @@ export default function AuthOverlay({ open, onClose }: AuthOverlayProps) {
   const resetForm = () => {
     setUsername("");
     setEmail("");
+    setUserIdOrEmail("");
     setPassword("");
     setConfirmPassword("");
     setShowPassword(false);
@@ -59,14 +61,9 @@ export default function AuthOverlay({ open, onClose }: AuthOverlayProps) {
     onClose();
   };
 
-  const submit = (event: FormEvent<HTMLFormElement>) => {
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError("");
-
-    if (!EMAIL_RE.test(email.trim())) {
-      setError("Please enter a valid email address.");
-      return;
-    }
 
     if (password.trim().length < 6) {
       setError("Password must be at least 6 characters.");
@@ -84,7 +81,12 @@ export default function AuthOverlay({ open, onClose }: AuthOverlayProps) {
         return;
       }
 
-      const result = signupUser({
+      if (!EMAIL_RE.test(email.trim())) {
+        setError("Please enter a valid email address.");
+        return;
+      }
+
+      const result = await signupUser({
         username: username.trim(),
         email: email.trim(),
         password,
@@ -99,7 +101,15 @@ export default function AuthOverlay({ open, onClose }: AuthOverlayProps) {
       return;
     }
 
-    const result = loginUser({ email: email.trim(), password });
+    if (!userIdOrEmail.trim()) {
+      setError("Email is required.");
+      return;
+    }
+
+    const result = await loginUser({
+      userIdOrEmail: userIdOrEmail.trim(),
+      password,
+    });
     if (!result.ok) {
       setError(result.error);
       return;
@@ -174,14 +184,20 @@ export default function AuthOverlay({ open, onClose }: AuthOverlayProps) {
           )}
 
           <label>
-            <span>Email</span>
+            <span>{mode === "signup" ? "Email" : "Email"}</span>
             <div className="auth-input-wrap">
               <FiMail />
               <input
-                type="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder="name@example.com"
+                type={mode === "signup" ? "email" : "text"}
+                value={mode === "signup" ? email : userIdOrEmail}
+                onChange={(event) =>
+                  mode === "signup"
+                    ? setEmail(event.target.value)
+                    : setUserIdOrEmail(event.target.value)
+                }
+                placeholder={
+                  mode === "signup" ? "name@example.com" : "name@example.com"
+                }
               />
             </div>
           </label>

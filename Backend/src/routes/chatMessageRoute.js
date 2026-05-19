@@ -1,12 +1,15 @@
-import ChatMessageModel from "../models/ChatMessagesModel.js";
-import ChatSessionModel from "../models/ChatSessionsModel.js";
-import UsersModel from "../models/UsersModel.js";
-import authHook from "../hooks/auth.js";
+import ChatMessageModel from "../models/chatMessageModel.js";
+import ChatSessionModel from "../models/chatSessionModel.js";
+import UsersModel from "../models/usersModel.js";
+import authHook from "../hooks/authHook.js";
+
+const CHATBOT_SERVICE_URL =
+  process.env.CHATBOT_SERVICE_URL || "http://localhost:8001/chat/ask";
 
 function ChatMessageRoutes(fastify) {
   fastify.post("/chat", { preHandler: authHook }, async (request, reply) => {
     const userId = Number(request.user?.user_id);
-    let { session_id, message } = request.body;
+    let { session_id, message, role } = request.body || {};
 
     try {
       if (!Number.isInteger(userId) || userId <= 0) {
@@ -35,6 +38,8 @@ function ChatMessageRoutes(fastify) {
           error: "Message is required",
         });
       }
+
+      const senderRole = role === "assistant" ? "ai" : "user";
 
       message = message.trim();
 
@@ -68,48 +73,53 @@ function ChatMessageRoutes(fastify) {
         ],
       });
 
-      const history = messages.map((m) => {
-        return {
-          role: m.sender,
-          content: m.message,
-        };
-      });
-
-      const requestBody = {
-        message,
-        session_id: String(session_id),
-        history,
-      };
+      const history = messages.map((m) => ({
+        role: m.role,
+        content: m.content,
+      }));
 
       await ChatMessageModel.create({
         session_id,
-        sender: "user",
-        message,
+        role: senderRole,
+        content: message,
       });
 
-      const aiRes = await fetch("http://localhost:8000/chat", {
+      const aiRes = await fetch(CHATBOT_SERVICE_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(requestBody),
+        body: JSON.stringify({
+          question: message,
+          user_id: userId,
+          session_id: String(session_id),
+          history,
+        }),
       });
-
-      if (!aiRes.ok) {
-        throw new Error(`Agent service failed with status ${aiRes.status}`);
-      }
 
       const aiData = await aiRes.json();
 
+      if (!aiRes.ok) {
+        return reply.code(aiRes.status).send({
+          success: false,
+          error:
+            aiData?.detail ||
+            aiData?.error ||
+            `Agent service failed with status ${aiRes.status}`,
+        });
+      }
+
       const aiReply =
-        typeof aiData?.reply === "string"
-          ? aiData.reply
-          : "Sorry, I could not generate a response right now.";
+        typeof aiData?.answer === "string"
+          ? aiData.answer
+          : typeof aiData?.reply === "string"
+            ? aiData.reply
+            : "Sorry, I could not generate a response right now.";
 
       await ChatMessageModel.create({
         session_id,
-        sender: "ai",
-        message: aiReply,
+        role: "assistant",
+        content: aiReply,
       });
 
       return reply.send({
@@ -126,11 +136,11 @@ function ChatMessageRoutes(fastify) {
         });
       }
 
-      console.error("Chat Route Error:", err.message);
+      console.error("Chat Route Error:", err?.message || err);
 
       return reply.code(500).send({
         success: false,
-        error: err.message,
+        error: err?.message || "Failed to process chat message",
       });
     }
   });

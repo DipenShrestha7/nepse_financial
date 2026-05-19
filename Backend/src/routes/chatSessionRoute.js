@@ -1,6 +1,6 @@
-import ChatMessageModel from "../models/ChatMessagesModel.js";
-import ChatSessionModel from "../models/ChatSessionsModel.js";
-import authHook from "../hooks/auth.js";
+import ChatMessageModel from "../models/chatMessageModel.js";
+import ChatSessionModel from "../models/chatSessionModel.js";
+import authHook from "../hooks/authHook.js";
 
 function ChatSessionRoutes(fastify) {
   fastify.get("/sessions", { preHandler: authHook }, async (request, reply) => {
