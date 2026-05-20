@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import argparse
 import json
-from pprint import pprint
 
 try:
 	from .query_parser import parse_question

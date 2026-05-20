@@ -1,18 +1,39 @@
 # routes.py (FastAPI)
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
+import logging
 from chatbot.query_parser import parse_question, get_company_suggestions
 from chatbot.database_session import get_metrics
 from chatbot.response_formatter import format_summary
 from chatbot.llm_client import call_llm
-from chatbot.memory_session import store_history
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
 
 @router.post("/chat/ask")
 async def ask(payload: dict):
     question = payload["question"]
-    user_id = payload.get("user_id")
     parsed = parse_question(question)
+    session_id = payload.get("session_id")
+    history = payload.get("history")
+
+    # Node backend already sends session history; normalize it for prompt context.
+    normalized_history = []
+    if isinstance(history, list):
+        for item in history:
+            if not isinstance(item, dict):
+                continue
+
+            role = (item.get("role") or "").strip().lower()
+            content = item.get("content")
+            if not isinstance(content, str) or not content.strip():
+                continue
+
+            if role == "ai":
+                role = "assistant"
+            elif role not in ("user", "assistant"):
+                role = "user"
+
+            normalized_history.append({"role": role, "content": content.strip()})
 
     # Check if we found any companies
     companies = parsed.get("companies") or []
@@ -107,10 +128,6 @@ async def ask(payload: dict):
                     raw_value = r.get("value") or r.get("raw_value")
                     answer = f"{metric} value of {company} in {quarter} is '{raw_value}'"
                     summary = format_summary([r], parsed)
-                    try:
-                        await store_history(user_id, question, answer)
-                    except Exception:
-                        pass
                     return {"answer": answer, "summary": summary}
 
         # 2) If fiscal-year token provided (e.g., '080-081'), pick latest quarter within that year
@@ -126,10 +143,6 @@ async def ask(payload: dict):
                 raw_value = best.get("value") or best.get("raw_value")
                 answer = f"{metric} value of {company} in {quarter} is '{raw_value}'"
                 summary = format_summary([best], parsed)
-                try:
-                    await store_history(user_id, question, answer)
-                except Exception:
-                    pass
                 return {"answer": answer, "summary": summary}
     
     # If the user explicitly requested a metric (e.g., "EPS"), filter the
@@ -155,14 +168,16 @@ async def ask(payload: dict):
         if filtered:
             filtered_rows = filtered
 
-    summary = format_summary(filtered_rows, parsed)
-    answer = call_llm(question, summary)
+    # Use last few messages from the current session only.
+    if session_id and normalized_history:
+        recent = normalized_history[-4:]
+        memory_text = "\n".join([f"{m['role']}: {m['content']}" for m in recent])
+        question_with_memory = f"Conversation history:\n{memory_text}\n\nUser: {question}"
+    else:
+        question_with_memory = question
 
-    try:
-        await store_history(user_id, question, answer)
-    except Exception:
-        # Chat history storage should not fail the user-facing response.
-        pass
+    summary = format_summary(filtered_rows, parsed)
+    answer = call_llm(question_with_memory, summary)
 
     response = {"answer": answer, "summary": summary}
     

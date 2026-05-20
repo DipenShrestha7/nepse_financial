@@ -15,7 +15,7 @@ const fastify = Fastify({
 const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
 
 fastify.register(cors, {
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   credentials: true,
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {

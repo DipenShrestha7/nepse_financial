@@ -9,11 +9,18 @@ import {
   FiInfo,
   FiLayers,
 } from "react-icons/fi";
+import companiesData from "../../../companies.json";
 
 type FinancialMetric = {
   metricName: string;
   [key: string]: string | number; // Dynamic quarters as keys
 };
+
+// Create a reverse mapping from scrip to company name
+const scripToCompanyName: { [key: string]: string } = {};
+Object.entries(companiesData).forEach(([companyName, data]: [string, any]) => {
+  scripToCompanyName[data.company_name] = companyName;
+});
 
 function Financial() {
   let { scrip } = useParams<{ scrip: string }>();
@@ -22,7 +29,14 @@ function Financial() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [quarters, setQuarters] = useState<string[]>([]);
+  const [companyName, setCompanyName] = useState<string>("");
   scrip = scrip?.toUpperCase() || "";
+
+  // Get company name from scrip code
+  useEffect(() => {
+    const name = scripToCompanyName[scrip] || scrip;
+    setCompanyName(name);
+  }, [scrip]);
   useEffect(() => {
     const fetchFinancialData = async () => {
       try {
@@ -110,6 +124,15 @@ function Financial() {
             <p className="mt-1.5 text-[0.92rem] text-[#9fb0d4]">
               Scrip:{" "}
               <span className="font-semibold text-cyan-300">{scrip}</span>
+              {companyName && scrip && (
+                <>
+                  {" "}
+                  •{" "}
+                  <span className="font-semibold text-cyan-300">
+                    {companyName}
+                  </span>
+                </>
+              )}
             </p>
           </div>
 

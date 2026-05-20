@@ -3,28 +3,32 @@ import ChatSessionModel from "../models/chatSessionModel.js";
 import authHook from "../hooks/authHook.js";
 
 function ChatSessionRoutes(fastify) {
-  fastify.get("/sessions", { preHandler: authHook }, async (request, reply) => {
-    const userId = request.user.user_id;
+  fastify.get(
+    "/chat/history",
+    { preHandler: authHook },
+    async (request, reply) => {
+      const userId = request.user.user_id;
 
-    try {
-      const sessions = await ChatSessionModel.findAll({
-        where: {
-          user_id: userId,
-        },
-        order: [["created_at", "DESC"]],
-      });
+      try {
+        const sessions = await ChatSessionModel.findAll({
+          where: {
+            user_id: userId,
+          },
+          order: [["created_at", "DESC"]],
+        });
 
-      return reply.send(sessions);
-    } catch (err) {
-      console.error("Fetch Sessions Error:", err.message);
-      fastify.log.error(err);
+        return reply.send(sessions);
+      } catch (err) {
+        console.error("Fetch Sessions Error:", err.message);
+        fastify.log.error(err);
 
-      return reply.code(500).send({
-        success: false,
-        error: "Failed to fetch sessions",
-      });
-    }
-  });
+        return reply.code(500).send({
+          success: false,
+          error: "Failed to fetch sessions",
+        });
+      }
+    },
+  );
 
   fastify.patch(
     "/sessions/:id",
