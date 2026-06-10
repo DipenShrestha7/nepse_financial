@@ -1,8 +1,41 @@
-node_modules/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
 .venv/
-insert_format_data/
-financial_data/
-.vscode/
-.browser_profile_nepse/
-insert_format_data/
+env/
+ENV/
+
+# Logs
+*.log
+logs/
+
+# Database
+*.sqlite3
+
+# Environment
 .env
+
+# Editor directories and files
+.vscode/
+.idea/
+.DS_Store
+
+# Pytest cache
+.pytest_cache/
+
+# Coverage
+htmlcov/
+.coverage
+coverage/
