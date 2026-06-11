@@ -1,6 +1,6 @@
 import crypto from "node:crypto";
 import jwt from "jsonwebtoken";
-import UsersModel from "../models/UsersModel.js";
+import UsersModel from "../models/usersModel.js";
 
 function hashPassword(password) {
   const salt = crypto.randomBytes(16).toString("hex");
