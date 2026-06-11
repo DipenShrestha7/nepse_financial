@@ -35,12 +35,18 @@ const start = async () => {
     fastify.register(usersRoutes);
     fastify.register(chatSessionRoutes);
     fastify.register(chatMessageRoutes);
-    await fastify.listen({ port: process.env.PORT || 8000 });
-    console.log("Server is running on port " + (process.env.PORT || 8000));
+    const port = Number(process.env.PORT) || 8000;
+    await fastify.listen({ port, host: "0.0.0.0" });
+    console.log("Server is running on port " + port);
   } catch (error) {
     fastify.log.error(error);
     process.exit(1);
   }
 };
-
+fastify.get("/", async () => {
+  return {
+    status: "ok",
+    message: "Backend is running",
+  };
+});
 start();
