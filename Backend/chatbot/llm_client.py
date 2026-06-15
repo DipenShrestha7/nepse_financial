@@ -4,7 +4,8 @@ import google.generativeai as genai
 try:
     from .config import settings
 except ImportError:
-    from config import settings
+    import importlib
+    settings = importlib.import_module("config").settings
 
 genai.configure(api_key=settings.GOOGLE_API_KEY)
 

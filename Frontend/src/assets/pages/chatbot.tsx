@@ -54,7 +54,7 @@ export default function Chatbot() {
     }
 
     try {
-      const res = await fetch("http://localhost:8000/chat/history", {
+      const res = await fetch(`${import.meta.env.BACKEND_URL}/chat/history`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

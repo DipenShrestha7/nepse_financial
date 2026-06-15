@@ -3,8 +3,9 @@ from typing import Optional, List, Dict
 
 try:
     from .config import settings
-except Exception:
-    from config import settings
+except ImportError:
+    import importlib
+    settings = importlib.import_module("config").settings
 
 MEMORY_API = settings["MEMORY_API_URL"].rstrip("/")
 

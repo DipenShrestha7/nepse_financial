@@ -7,7 +7,11 @@ from pathlib import Path
 try:
 	from .fuzzy_matcher import normalize_company_input, normalize_metric_input, find_company_suggestions
 except ImportError:
-	from fuzzy_matcher import normalize_company_input, normalize_metric_input, find_company_suggestions
+	import importlib
+	_fuzzy = importlib.import_module("fuzzy_matcher")
+	normalize_company_input = _fuzzy.normalize_company_input
+	normalize_metric_input = _fuzzy.normalize_metric_input
+	find_company_suggestions = _fuzzy.find_company_suggestions
 
 
 BASE_DIR = Path(__file__).resolve().parents[2]

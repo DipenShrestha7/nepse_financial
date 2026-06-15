@@ -4,7 +4,8 @@ from sqlalchemy.orm import sessionmaker
 try:
   from .config import settings
 except ImportError:
-  from config import settings
+  import importlib
+  settings = importlib.import_module("config").settings
 
 engine = create_engine(settings["DATABASE_URL"], pool_pre_ping=True)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False)

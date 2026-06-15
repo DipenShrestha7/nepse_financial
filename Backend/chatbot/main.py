@@ -9,10 +9,13 @@ try:
 	from .response_formatter import format_summary
 	from .llm_client import call_llm
 except ImportError:
-	from query_parser import parse_question
-	from database_session import get_metrics
-	from response_formatter import format_summary
-	from llm_client import call_llm
+	import sys
+	from pathlib import Path
+	sys.path.append(str(Path(__file__).resolve().parent.parent))
+	from chatbot.query_parser import parse_question
+	from chatbot.database_session import get_metrics
+	from chatbot.response_formatter import format_summary
+	from chatbot.llm_client import call_llm
 
 
 def analyze_question(question: str) -> dict:
