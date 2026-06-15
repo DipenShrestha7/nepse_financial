@@ -1,4 +1,4 @@
-export const BACKEND = import.meta.env.VITE_API_URL?.replace(/\/$/, "") || "";
+export const BACKEND = import.meta.env.VITE_BACKEND_URL?.replace(/\/$/, "") || "";
 
 export const getImageUrl = (path?: string | null) => {
   if (!path) return "";
