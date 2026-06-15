@@ -8,7 +8,7 @@ import {
   FiPieChart,
   FiTrendingUp,
 } from "react-icons/fi";
-
+const BACKEND = import.meta.env.BACKEND_URL;
 type FinancialRecord = {
   quarter: string;
   metricName: string;
@@ -392,7 +392,7 @@ function Comparison() {
       try {
         setLoadingCompanies(true);
 
-        const companiesResp = await fetch("http://127.0.0.1:8000/companies");
+        const companiesResp = await fetch(`${BACKEND}/companies`);
         if (!companiesResp.ok) {
           throw new Error("Failed to load companies");
         }
@@ -431,7 +431,7 @@ function Comparison() {
     const fetchCompany1Quarters = async () => {
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/financial?scrip=${encodeURIComponent(selectedCompany1)}`,
+          `${BACKEND}/financial?scrip=${encodeURIComponent(selectedCompany1)}`,
         );
         if (response.ok) {
           const data = (await response.json()) as FinancialRecord[];
@@ -458,7 +458,7 @@ function Comparison() {
     const fetchCompany2Quarters = async () => {
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/financial?scrip=${encodeURIComponent(selectedCompany2)}`,
+          `${BACKEND}/financial?scrip=${encodeURIComponent(selectedCompany2)}`,
         );
         if (response.ok) {
           const data = (await response.json()) as FinancialRecord[];
@@ -508,10 +508,10 @@ function Comparison() {
     try {
       const [response1, response2] = await Promise.all([
         fetch(
-          `http://127.0.0.1:8000/financial?scrip=${encodeURIComponent(selectedCompany1)}`,
+          `${BACKEND}/financial?scrip=${encodeURIComponent(selectedCompany1)}`,
         ),
         fetch(
-          `http://127.0.0.1:8000/financial?scrip=${encodeURIComponent(selectedCompany2)}`,
+          `${BACKEND}/financial?scrip=${encodeURIComponent(selectedCompany2)}`,
         ),
       ]);
 

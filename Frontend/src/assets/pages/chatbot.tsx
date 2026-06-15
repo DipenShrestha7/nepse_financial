@@ -5,6 +5,7 @@ import { getAuthToken, getCurrentUser } from "../../utils/authApi";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
+const BACKEND = import.meta.env.BACKEND_URL;
 type Message = {
   id: number;
   text: string;
@@ -54,7 +55,7 @@ export default function Chatbot() {
     }
 
     try {
-      const res = await fetch(`${import.meta.env.BACKEND_URL}/chat/history`, {
+      const res = await fetch(`${BACKEND}/chat/history`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -76,7 +77,7 @@ export default function Chatbot() {
 
     try {
       const res = await fetch(
-        `http://localhost:8000/sessions/${targetSessionId}/messages`,
+        `${BACKEND}/sessions/${targetSessionId}/messages`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -147,7 +148,7 @@ export default function Chatbot() {
     setInput("");
 
     try {
-      const res = await fetch("http://localhost:8000/chat", {
+      const res = await fetch(`${BACKEND}/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -234,7 +235,7 @@ export default function Chatbot() {
 
     try {
       const res = await fetch(
-        `http://localhost:8000/sessions/${targetSessionId}`,
+        `${BACKEND}/sessions/${targetSessionId}`,
         {
           method: "PATCH",
           headers: {
@@ -303,7 +304,7 @@ export default function Chatbot() {
 
     try {
       const res = await fetch(
-        `http://localhost:8000/sessions/${targetSessionId}`,
+        `${BACKEND}/sessions/${targetSessionId}`,
         {
           method: "DELETE",
           headers: {

@@ -11,6 +11,8 @@ import {
 } from "react-icons/fi";
 import Header from "../components/Header";
 
+const BACKEND = import.meta.env.BACKEND_URL;
+
 type Company = {
   id: number;
   name: string;
@@ -27,7 +29,7 @@ function Home() {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/companies");
+        const response = await fetch(`${BACKEND}/companies`);
         const data = await response.json();
         setCompanies(data);
       } catch (error) {

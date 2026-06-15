@@ -92,7 +92,7 @@ export default function AuthOverlay({ open, onClose }: AuthOverlayProps) {
         password,
       });
 
-      if (!result.ok) {
+      if (result.ok==false) {
         setError(result.error);
         return;
       }
@@ -110,7 +110,7 @@ export default function AuthOverlay({ open, onClose }: AuthOverlayProps) {
       userIdOrEmail: userIdOrEmail.trim(),
       password,
     });
-    if (!result.ok) {
+    if (result.ok==false) {
       setError(result.error);
       return;
     }

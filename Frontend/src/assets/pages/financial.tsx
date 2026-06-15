@@ -11,6 +11,8 @@ import {
 } from "react-icons/fi";
 import companiesData from "../../../companies.json";
 
+const BACKEND = import.meta.env.BACKEND_URL;
+
 type FinancialMetric = {
   metricName: string;
   [key: string]: string | number; // Dynamic quarters as keys
@@ -50,7 +52,7 @@ function Financial() {
 
         // Fetch financial data from backend
         const response = await fetch(
-          `http://127.0.0.1:8000/financial?scrip=${scrip}`,
+          `${BACKEND}/financial?scrip=${scrip}`,
         );
 
         if (!response.ok) {
