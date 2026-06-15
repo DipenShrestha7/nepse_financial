@@ -10,7 +10,7 @@ import {
   FiTrendingUp,
 } from "react-icons/fi";
 import Header from "../components/Header";
-// import { BACKEND } from "../../config/api.ts";
+import { BACKEND } from "../../config/api.ts";
 
 type Company = {
   id: number;
@@ -28,7 +28,7 @@ function Home() {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await fetch(`https://nepse-financial.onrender.com/companies`);
+        const response = await fetch(`${BACKEND}/companies`);
         const data = await response.json();
         setCompanies(data);
       } catch (error) {
