@@ -10,8 +10,7 @@ import {
   FiLayers,
 } from "react-icons/fi";
 import companiesData from "../../../companies.json";
-
-const BACKEND = import.meta.env.BACKEND_URL;
+import { BACKEND } from "../../config/api.ts";
 
 type FinancialMetric = {
   metricName: string;

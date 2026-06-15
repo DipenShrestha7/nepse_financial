@@ -4,8 +4,8 @@ import { FiLock, FiSend } from "react-icons/fi";
 import { getAuthToken, getCurrentUser } from "../../utils/authApi";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { BACKEND } from "../../config/api.ts";
 
-const BACKEND = import.meta.env.BACKEND_URL;
 type Message = {
   id: number;
   text: string;

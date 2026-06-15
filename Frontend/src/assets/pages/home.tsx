@@ -10,8 +10,7 @@ import {
   FiTrendingUp,
 } from "react-icons/fi";
 import Header from "../components/Header";
-
-const BACKEND = import.meta.env.BACKEND_URL;
+import { BACKEND } from "../../config/api.ts";
 
 type Company = {
   id: number;

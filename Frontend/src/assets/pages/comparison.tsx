@@ -8,7 +8,8 @@ import {
   FiPieChart,
   FiTrendingUp,
 } from "react-icons/fi";
-const BACKEND = import.meta.env.BACKEND_URL;
+import { BACKEND } from "../../config/api.ts";
+
 type FinancialRecord = {
   quarter: string;
   metricName: string;
