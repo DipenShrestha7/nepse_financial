@@ -12,7 +12,7 @@ const fastify = Fastify({
   logger: true,
 });
 
-const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
+const allowedOrigins = [process.env.FRONTEND_URL];
 
 fastify.register(cors, {
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
@@ -35,7 +35,7 @@ const start = async () => {
     fastify.register(usersRoutes);
     fastify.register(chatSessionRoutes);
     fastify.register(chatMessageRoutes);
-    const port = Number(process.env.PORT) || 8000;
+    const port = Number(process.env.PORT);
     await fastify.listen({ port, host: "0.0.0.0" });
     console.log("Server is running on port " + port);
   } catch (error) {

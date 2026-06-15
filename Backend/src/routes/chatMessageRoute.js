@@ -3,8 +3,7 @@ import ChatSessionModel from "../models/chatSessionModel.js";
 import UsersModel from "../models/usersModel.js";
 import authHook from "../hooks/authHook.js";
 
-const CHATBOT_SERVICE_URL =
-  process.env.CHATBOT_SERVICE_URL || "http://localhost:8001/chat/ask";
+const CHATBOT_SERVICE_URL = process.env.CHATBOT_SERVICE_URL;
 
 function ChatMessageRoutes(fastify) {
   fastify.post("/chat", { preHandler: authHook }, async (request, reply) => {
