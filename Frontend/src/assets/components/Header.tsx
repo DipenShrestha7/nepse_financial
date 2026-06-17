@@ -4,6 +4,7 @@ import { FiMessageSquare, FiGitMerge, FiHome } from "react-icons/fi";
 import AuthOverlay from "./AuthOverlay";
 import LogoutConfirmationOverlay from "./LogoutConfirmationOverlay";
 import { getCurrentUser, logoutUser } from "../../utils/authApi";
+import logo from "../../assets/images/logo_main.png";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -39,9 +40,14 @@ export default function Header() {
   return (
     <>
       <header className="panel site-header">
-        <div onClick={() => navigate("/company")} className="site-brand">
-          <div className="site-logo">M</div>
-          <div className="site-brand-text">
+        <div
+          onClick={() => navigate("/company")}
+          className="flex cursor-pointer justify-center items-center gap-2"
+        >
+          <div>
+            <img className="w-5" src={logo} alt="Mero Market Logo" />
+          </div>
+          <div className="site-brand-text mt-0.5">
             <div className="site-brand-name">Mero Market</div>
           </div>
         </div>
