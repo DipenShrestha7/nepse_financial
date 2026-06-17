@@ -83,7 +83,7 @@ function ChatMessageRoutes(fastify) {
         content: message,
       });
 
-      const aiRes = await fetch(CHATBOT_SERVICE_URL, {
+      const aiRes = await fetch(`${CHATBOT_SERVICE_URL}/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
