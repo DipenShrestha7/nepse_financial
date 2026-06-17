@@ -12,7 +12,7 @@ const fastify = Fastify({
   logger: true,
 });
 
-const allowedOrigins = [process.env.FRONTEND_URL,"http://localhost:5173"];
+const allowedOrigins = [process.env.FRONTEND_URL, "http://localhost:5173"];
 
 fastify.register(cors, {
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],

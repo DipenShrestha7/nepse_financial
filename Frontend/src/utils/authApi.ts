@@ -1,3 +1,4 @@
+import { BACKEND } from "../config/api";
 export type AuthUser = {
   id: number;
   username: string;
@@ -12,7 +13,6 @@ type AuthResponse =
     }
   | { success: false; error: string };
 
-const API_BASE_URL = "http://localhost:8000";
 const STORAGE_KEY_USER = "mero_market_user";
 const STORAGE_KEY_TOKEN = "mero_market_token";
 
@@ -77,7 +77,7 @@ export async function signupUser(input: {
   email: string;
   password: string;
 }): Promise<{ ok: true; user: AuthUser } | { ok: false; error: string }> {
-  const response = await fetch(`${API_BASE_URL}/users`, {
+  const response = await fetch(`${BACKEND}/users`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -92,7 +92,7 @@ export async function signupUser(input: {
   if (!response.ok || !data.success) {
     return {
       ok: false,
-      error: data.success ? "Failed to create account." : data.error,
+      error: "Failed to create account.",
     };
   }
 
@@ -115,7 +115,7 @@ export async function loginUser(input: {
     ? { user_id: Number(normalizedUserId), password: input.password }
     : { email: normalizedUserId, password: input.password };
 
-  const response = await fetch(`${API_BASE_URL}/users/login`, {
+  const response = await fetch(`${BACKEND}/users/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(loginPayload),
@@ -124,7 +124,7 @@ export async function loginUser(input: {
   const data = (await response.json()) as AuthResponse;
 
   if (!response.ok || !data.success) {
-    return { ok: false, error: data.success ? "Invalid login." : data.error };
+    return { ok: false, error: "Invalid login." };
   }
 
   const user: AuthUser = {
