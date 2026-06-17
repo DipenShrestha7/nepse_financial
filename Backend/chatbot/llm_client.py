@@ -1,13 +1,14 @@
 # llm_client.py
 import json
-import google.generativeai as genai
+from google import genai
+from google.genai import types as genai_types
 try:
     from .config import settings
 except ImportError:
     import importlib
     settings = importlib.import_module("config").settings
 
-genai.configure(api_key=settings.GOOGLE_API_KEY)
+client = genai.Client(api_key=settings.GOOGLE_API_KEY)
 
 
 def _sanitize_answer(text: str) -> str:
@@ -68,14 +69,15 @@ def call_llm(question: str, json_summary: dict) -> str:
         f"Structured data: {json.dumps(llm_payload, ensure_ascii=False, indent=2)}\n"
     )
 
-    model = genai.GenerativeModel(settings.GEMINI_MODEL)
-    response = model.generate_content(
-        prompt,
-        generation_config=genai.types.GenerationConfig(
+    response = client.models.generate_content(
+        model=settings.GEMINI_MODEL,
+        contents=prompt,
+        # Use the alias here to avoid the built-in module conflict
+        config=genai_types.GenerateContentConfig(
             temperature=settings.LLM_TEMPERATURE,
             max_output_tokens=2000,
         ),
     )
 
-    return _sanitize_answer(response.text)
+    return _sanitize_answer(response.text or " ")
 

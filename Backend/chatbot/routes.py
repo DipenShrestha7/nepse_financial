@@ -1,4 +1,6 @@
 # routes.py (FastAPI)
+from typing import cast
+
 from fastapi import APIRouter
 import logging
 from chatbot.query_parser import parse_question, get_company_suggestions
@@ -62,6 +64,10 @@ async def ask(payload: dict):
     company_symbols = parsed.get("company_symbols") or ([parsed.get("company_symbol") or parsed.get("symbol")] if parsed.get("company_symbol") or parsed.get("symbol") else None)
     company_names = parsed.get("company_names") or ([parsed.get("company_name") or parsed.get("company")] if parsed.get("company_name") or parsed.get("company") else None)
 
+    company_symbols_clean = cast(list[str], company_symbols if company_symbols is not None else []) 
+
+    company_names_clean = cast(list[str], company_names if company_names is not None else [])
+
     try:
         rows = get_metrics(
             quarters=parsed.get("quarters"),
@@ -70,8 +76,8 @@ async def ask(payload: dict):
             company_symbol=parsed.get("company_symbol") or parsed.get("symbol"),
             company_name=parsed.get("company_name") or parsed.get("company"),
             company_ids=company_ids,
-            company_symbols=company_symbols,
-            company_names=company_names,
+            company_symbols=company_symbols_clean,
+            company_names=company_names_clean,
         )
     except ValueError as exc:
         # Handle database errors gracefully
@@ -136,7 +142,7 @@ async def ask(payload: dict):
             candidates = [r for r in rows if metric_matches(r) and (r.get("quarter") or "").startswith(fy_tok)]
             if candidates:
                 # pick the latest quarter by string ordering
-                best = sorted(candidates, key=lambda x: x.get("quarter"))[-1]
+                best = sorted(candidates, key=lambda x: x.get("quarter") or "")[-1]
                 metric = best.get("metric_name") or "Metric"
                 company = best.get("company_name") or best.get("company_symbol") or "Company"
                 quarter = best.get("quarter") or "Unknown quarter"

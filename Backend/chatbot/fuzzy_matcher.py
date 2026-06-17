@@ -10,6 +10,7 @@ try:
     from fuzzywuzzy import fuzz
     HAS_FUZZYWUZZY = True
 except ImportError:
+    fuzz = None
     HAS_FUZZYWUZZY = False
 
 
@@ -27,7 +28,7 @@ def get_similarity_score(query: str, target: str) -> float:
     if not query or not target:
         return 0.0
     
-    if HAS_FUZZYWUZZY:
+    if HAS_FUZZYWUZZY and fuzz is not None:
         # Use token_set_ratio for partial matches (handles word order)
         score = fuzz.token_set_ratio(query.lower(), target.lower()) / 100.0
     else:

@@ -234,19 +234,16 @@ export default function Chatbot() {
     setBusySessionId(targetSessionId);
 
     try {
-      const res = await fetch(
-        `${BACKEND}/sessions/${targetSessionId}`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({
-            title: nextTitle,
-          }),
+      const res = await fetch(`${BACKEND}/sessions/${targetSessionId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-      );
+        body: JSON.stringify({
+          title: nextTitle,
+        }),
+      });
 
       console.log("Response status:", res.status, "ok:", res.ok);
       const data = await res.json();
@@ -303,15 +300,12 @@ export default function Chatbot() {
     setBusySessionId(targetSessionId);
 
     try {
-      const res = await fetch(
-        `${BACKEND}/sessions/${targetSessionId}`,
-        {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+      const res = await fetch(`${BACKEND}/sessions/${targetSessionId}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-      );
+      });
 
       const data = await res.json();
       if (!res.ok) {
