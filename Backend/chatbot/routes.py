@@ -11,7 +11,7 @@ from chatbot.llm_client import call_llm
 router = APIRouter()
 logger = logging.getLogger(__name__)
 
-@router.post("/chat/ask")
+@router.post("/chat")
 async def ask(payload: dict):
     question = payload["question"]
     parsed = parse_question(question)
