@@ -6,10 +6,10 @@ beautifulsoup4
 sqlalchemy
 psycopg2-binary
 python-dotenv
-google-generativeai
-google-genai
 requests
 fastapi
 uvicorn
 fuzzywuzzy
 python-Levenshtein
+langchain
+langchain-openai
