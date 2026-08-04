@@ -95,7 +95,16 @@ function ChatMessageRoutes(fastify) {
           history,
         }),
       });
+      const contentType = aiRes.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        const htmlError = await aiRes.text();
+        console.error("Python Service returned HTML/Text instead of JSON:");
+        console.error(htmlError); //
 
+        return reply.status(502).send({
+          error: "AI backend returned an invalid response or is waking up.",
+        });
+      }
       const aiData = await aiRes.json();
 
       if (!aiRes.ok) {

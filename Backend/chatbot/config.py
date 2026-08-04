@@ -4,7 +4,6 @@ import os
 
 from dotenv import load_dotenv
 
-
 BASE_DIR = Path(__file__).resolve().parents[1]
 CHATBOT_DIR = Path(__file__).resolve().parent
 
@@ -42,8 +41,9 @@ def _get_float(name: str, default: float) -> float:
 @dataclass(frozen=True)
 class Settings:
     DATABASE_URL: str
-    GOOGLE_API_KEY: str
-    GEMINI_MODEL: str
+    OPENROUTER_API_KEY: str
+    OPENROUTER_MODEL: str
+    OPENROUTER_BASE_URL: str
     LLM_TEMPERATURE: float
     MEMORY_API_URL: str
     DEBUG: bool
@@ -56,18 +56,19 @@ class Settings:
 database_url = os.getenv("DATABASE_URL")
 if not database_url:
     raise RuntimeError("Missing required environment variable: DATABASE_URL")
-google_api_key = os.getenv("GOOGLE_API_KEY")
 
-if not database_url:
-    raise RuntimeError("Missing required environment variable: DATABASE_URL")
-if not google_api_key:
-    raise RuntimeError("Missing required environment variable: GOOGLE_API_KEY")
+openrouter_api_key = os.getenv("OPENROUTER_API_KEY")
+if not openrouter_api_key:
+    raise RuntimeError("Missing required environment variable: OPENROUTER_API_KEY")
 
 
 settings = Settings(
     DATABASE_URL=_normalize_database_url(database_url),
-    GOOGLE_API_KEY=google_api_key,
-    GEMINI_MODEL=os.getenv("GEMINI_MODEL", "gemini-2.5-flash-lite"),
+    OPENROUTER_API_KEY=openrouter_api_key,
+    OPENROUTER_MODEL=os.getenv("OPENROUTER_MODEL", "openrouter/free"),
+    OPENROUTER_BASE_URL=os.getenv(
+        "OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"
+    ),
     LLM_TEMPERATURE=_get_float("LLM_TEMPERATURE", 0.2),
     MEMORY_API_URL=os.getenv("MEMORY_API_URL", "http://localhost:3000/history"),
     DEBUG=os.getenv("DEBUG", "false").lower() in ("true", "1", "yes"),

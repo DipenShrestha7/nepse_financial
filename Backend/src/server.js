@@ -35,7 +35,13 @@ const start = async () => {
     fastify.register(usersRoutes);
     fastify.register(chatSessionRoutes);
     fastify.register(chatMessageRoutes);
-    const port = Number(process.env.PORT);
+    const configuredPort = Number(process.env.PORT);
+    const port =
+      Number.isInteger(configuredPort) &&
+      configuredPort >= 0 &&
+      configuredPort < 65536
+        ? configuredPort
+        : 3000;
     await fastify.listen({ port, host: "0.0.0.0" });
     console.log("Server is running on port " + port);
   } catch (error) {

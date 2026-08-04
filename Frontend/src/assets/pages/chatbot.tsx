@@ -500,7 +500,87 @@ export default function Chatbot() {
                       >
                         {m.from === "bot" ? (
                           <div className="prose prose-invert max-w-none">
-                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            <ReactMarkdown
+                              remarkPlugins={[remarkGfm]}
+                              components={{
+                                // Headings (## and ###)
+                                h2: ({ children }) => (
+                                  <h2 className="text-xl font-bold text-slate-100 border-b border-slate-700 pb-2 mt-6 mb-3">
+                                    {children}
+                                  </h2>
+                                ),
+                                h3: ({ children }) => (
+                                  <h3 className="text-lg font-semibold text-slate-200 mt-4 mb-2">
+                                    {children}
+                                  </h3>
+                                ),
+
+                                // Paragraphs & Bold Text
+                                p: ({ children }) => (
+                                  <p className="text-slate-300 leading-relaxed mb-4">
+                                    {children}
+                                  </p>
+                                ),
+                                strong: ({ children }) => (
+                                  <strong className="font-semibold text-white">
+                                    {children}
+                                  </strong>
+                                ),
+
+                                // Lists
+                                ul: ({ children }) => (
+                                  <ul className="list-disc list-inside mb-4 space-y-1 text-slate-300">
+                                    {children}
+                                  </ul>
+                                ),
+                                ol: ({ children }) => (
+                                  <ol className="list-decimal list-inside mb-4 space-y-1 text-slate-300">
+                                    {children}
+                                  </ol>
+                                ),
+
+                                // GitHub Flavored Markdown Tables (Dark Mode)
+                                table: ({ children }) => (
+                                  <div className="overflow-x-auto my-4 rounded-lg border border-slate-700 bg-slate-900/60 shadow-md">
+                                    <table className="min-w-full divide-y divide-slate-700 text-sm text-left text-slate-200">
+                                      {children}
+                                    </table>
+                                  </div>
+                                ),
+                                thead: ({ children }) => (
+                                  <thead className="bg-slate-800 text-slate-100 font-semibold border-b border-slate-700">
+                                    {children}
+                                  </thead>
+                                ),
+                                tbody: ({ children }) => (
+                                  <tbody className="divide-y divide-slate-700/60 bg-slate-900/30">
+                                    {children}
+                                  </tbody>
+                                ),
+                                tr: ({ children }) => (
+                                  <tr className="hover:bg-slate-800/50 transition-colors">
+                                    {children}
+                                  </tr>
+                                ),
+                                th: ({ children }) => (
+                                  <th className="px-4 py-3 font-semibold text-slate-100 border-r border-slate-700/50 last:border-r-0">
+                                    {children}
+                                  </th>
+                                ),
+                                td: ({ children }) => (
+                                  <td className="px-4 py-3 whitespace-nowrap text-slate-300 border-r border-slate-700/50 last:border-r-0">
+                                    {children}
+                                  </td>
+                                ),
+
+                                // Code blocks or inline code
+                                code: ({ children }) => (
+                                  <code className="bg-slate-800 text-amber-300 px-1.5 py-0.5 rounded text-xs font-mono">
+                                    {children}
+                                  </code>
+                                ),
+                              }}
+                            >
                               {m.text}
                             </ReactMarkdown>
                           </div>

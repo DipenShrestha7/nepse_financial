@@ -1,15 +1,14 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import os;
-from .routes import router
-
+import os
+from chatbot.routes import router
 
 app = FastAPI(title="NEPSE Chatbot Service")
-allowed_origins=[
+allowed_origins = [
     "http://localhost:5173",
     "http://localhost:517",
-    os.getenv("FASTIFY_URL")
-    ]
+    os.getenv("FASTIFY_URL"),
+]
 
 app.add_middleware(
     CORSMiddleware,
